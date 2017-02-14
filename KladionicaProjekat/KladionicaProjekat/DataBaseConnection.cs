@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using System.Data.SqlServerCe;
 
+using System.Configuration;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace KladionicaProjekat
 {
     class DataBaseConnection
@@ -14,7 +21,7 @@ namespace KladionicaProjekat
         {
             Pocetna Pc = new Pocetna();
             string Dir = Pc.GetHomeDirectory();
-            string connectionString = "Password = 'milos123'; " + "Data Source ='" + @Dir + "\\bazakladionice.sdf'";
+            string connectionString = "Password = 'milos123'; " + "Data Source =" + @Dir + "\\bazakladionice.sdf";
 
 
             connection = new SqlCeConnection(connectionString);

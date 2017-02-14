@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
-using System.Data.SqlClient;
 
 namespace KladionicaProjekat
 {
-    public partial class Workpeople : Form
+    public partial class Player : Form
     {
+
         private static SqlCeConnection connection = DataBaseConnection.Instance.Connection;
 
-        public Workpeople()
+        public Player()
         {
             InitializeComponent();
         }
@@ -26,24 +26,9 @@ namespace KladionicaProjekat
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void SaveButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void First_nameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

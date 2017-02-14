@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.codebettingshopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workpeopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doublesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,12 +59,6 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // ticketToolStripMenuItem
-            // 
-            this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
-            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.ticketToolStripMenuItem.Text = "Ticket";
-            // 
             // codebettingshopToolStripMenuItem
             // 
             this.codebettingshopToolStripMenuItem.Name = "codebettingshopToolStripMenuItem";
@@ -78,41 +72,53 @@
             this.workpeopleToolStripMenuItem.Text = "Workpeople";
             this.workpeopleToolStripMenuItem.Click += new System.EventHandler(this.workpeopleToolStripMenuItem_Click);
             // 
+            // ticketToolStripMenuItem
+            // 
+            this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
+            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.ticketToolStripMenuItem.Text = "Ticket";
+            // 
             // playerToolStripMenuItem
             // 
             this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
             this.playerToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.playerToolStripMenuItem.Text = "Player";
+            this.playerToolStripMenuItem.Click += new System.EventHandler(this.playerToolStripMenuItem_Click);
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
             this.eventToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.eventToolStripMenuItem.Text = "Event";
+            this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // doublesToolStripMenuItem
             // 
             this.doublesToolStripMenuItem.Name = "doublesToolStripMenuItem";
             this.doublesToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.doublesToolStripMenuItem.Text = "Doubles";
+            this.doublesToolStripMenuItem.Click += new System.EventHandler(this.doublesToolStripMenuItem_Click);
             // 
             // sportsToolStripMenuItem
             // 
             this.sportsToolStripMenuItem.Name = "sportsToolStripMenuItem";
             this.sportsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.sportsToolStripMenuItem.Text = "Sports";
+            this.sportsToolStripMenuItem.Click += new System.EventHandler(this.sportsToolStripMenuItem_Click);
             // 
             // leagueToolStripMenuItem
             // 
             this.leagueToolStripMenuItem.Name = "leagueToolStripMenuItem";
             this.leagueToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.leagueToolStripMenuItem.Text = "League";
+            this.leagueToolStripMenuItem.Click += new System.EventHandler(this.leagueToolStripMenuItem_Click);
             // 
             // gametypeToolStripMenuItem
             // 
             this.gametypeToolStripMenuItem.Name = "gametypeToolStripMenuItem";
             this.gametypeToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.gametypeToolStripMenuItem.Text = "Game_type";
+            this.gametypeToolStripMenuItem.Click += new System.EventHandler(this.gametypeToolStripMenuItem_Click);
             // 
             // Pocetna
             // 

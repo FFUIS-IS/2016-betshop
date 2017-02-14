@@ -40,8 +40,8 @@
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.Access_levelTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -106,6 +106,7 @@
             this.First_nameTextBox.Name = "First_nameTextBox";
             this.First_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.First_nameTextBox.TabIndex = 6;
+            this.First_nameTextBox.TextChanged += new System.EventHandler(this.First_nameTextBox_TextChanged);
             // 
             // Last_nameTextBox
             // 
@@ -142,31 +143,33 @@
             this.Access_levelTextBox.Size = new System.Drawing.Size(100, 20);
             this.Access_levelTextBox.TabIndex = 11;
             // 
-            // button1
+            // SaveButton
             // 
-            this.button1.Location = new System.Drawing.Point(61, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "SAVE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SaveButton.Location = new System.Drawing.Point(61, 342);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(75, 23);
+            this.SaveButton.TabIndex = 12;
+            this.SaveButton.Text = "SAVE";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // button2
+            // CancelButton
             // 
-            this.button2.Location = new System.Drawing.Point(218, 342);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "CANCEL";
-            this.button2.UseVisualStyleBackColor = true;
+            this.CancelButton.Location = new System.Drawing.Point(218, 342);
+            this.CancelButton.Name = "CancelButton";
+            this.CancelButton.Size = new System.Drawing.Size(75, 23);
+            this.CancelButton.TabIndex = 13;
+            this.CancelButton.Text = "CANCEL";
+            this.CancelButton.UseVisualStyleBackColor = true;
+            this.CancelButton.Click += new System.EventHandler(this.button2_Click);
             // 
             // Workpeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(449, 418);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.CancelButton);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.Access_levelTextBox);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.AddressTextBox);
@@ -200,7 +203,7 @@
         private System.Windows.Forms.TextBox AddressTextBox;
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.TextBox Access_levelTextBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button CancelButton;
     }
 }

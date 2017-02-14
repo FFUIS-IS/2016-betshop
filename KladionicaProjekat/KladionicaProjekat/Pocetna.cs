@@ -31,9 +31,45 @@ namespace KladionicaProjekat
 
         private void workpeopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Workpeople wpeope = new Workpeople();
-            wpeope.ShowDialog();
+            Workpeople workpeope = new Workpeople();
+            workpeope.ShowDialog();
           
+        }
+
+        private void playerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Player player = new Player();
+            player.ShowDialog();
+        }
+
+        private void gametypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Game_type gameType = new Game_type();
+            gameType.ShowDialog();
+        }
+
+        private void leagueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            League leagues = new League();
+            leagues.ShowDialog();
+        }
+
+        private void sportsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sports sportss = new Sports();
+            sportss.ShowDialog();
+        }
+
+        private void doublesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Doubles doubless = new Doubles();
+            doubless.ShowDialog(); 
+        }
+
+        private void eventToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Event events = new Event();
+            events.ShowDialog();
         }
     }
 }
