@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.codebettingshopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.workpeopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ticketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.playerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.doublesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +45,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.codebettingshopToolStripMenuItem,
             this.workpeopleToolStripMenuItem,
-            this.ticketToolStripMenuItem,
             this.playerToolStripMenuItem,
             this.eventToolStripMenuItem,
             this.doublesToolStripMenuItem,
@@ -64,6 +62,7 @@
             this.codebettingshopToolStripMenuItem.Name = "codebettingshopToolStripMenuItem";
             this.codebettingshopToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
             this.codebettingshopToolStripMenuItem.Text = "Code_betting_shop";
+            this.codebettingshopToolStripMenuItem.Click += new System.EventHandler(this.codebettingshopToolStripMenuItem_Click);
             // 
             // workpeopleToolStripMenuItem
             // 
@@ -71,12 +70,6 @@
             this.workpeopleToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.workpeopleToolStripMenuItem.Text = "Workpeople";
             this.workpeopleToolStripMenuItem.Click += new System.EventHandler(this.workpeopleToolStripMenuItem_Click);
-            // 
-            // ticketToolStripMenuItem
-            // 
-            this.ticketToolStripMenuItem.Name = "ticketToolStripMenuItem";
-            this.ticketToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.ticketToolStripMenuItem.Text = "Ticket";
             // 
             // playerToolStripMenuItem
             // 
@@ -142,7 +135,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem codebettingshopToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem workpeopleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ticketToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem playerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem doublesToolStripMenuItem;

@@ -71,5 +71,11 @@ namespace KladionicaProjekat
             Event events = new Event();
             events.ShowDialog();
         }
+
+        private void codebettingshopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Code_betting_shop CodeBettigShop = new Code_betting_shop();
+            CodeBettigShop.ShowDialog();
+        }
     }
 }

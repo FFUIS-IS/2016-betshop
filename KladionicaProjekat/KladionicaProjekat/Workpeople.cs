@@ -14,7 +14,7 @@ namespace KladionicaProjekat
 {
     public partial class Workpeople : Form
     {
-        private static SqlCeConnection connection = DataBaseConnection.Instance.Connection;
+        
 
         public Workpeople()
         {
@@ -38,7 +38,52 @@ namespace KladionicaProjekat
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
+
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Workpeople " + "([First_name], [Last_name], [Phone_number], [Address], [Password], [Access_level]) VALUES" +  " ('" + First_nameTextBox.Text +"', '" + Last_nameTextBox.Text +"', '" + Phone_numberTextBox.Text +"', '" + AddressTextBox.Text +"', '" + PasswordTextBox.Text +"', '" + Access_levelTextBox.Text +"', ); ", Connection);
+
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+
+            catch (Exception ee)
+            {
+
+
+                MessageBox.Show("Unos nije uspio! \r Greska: " + ee.Message);
+                return;
+
+            }
+
+
+            if (First_nameTextBox.Text == "")
+            { MessageBox.Show("Unesite ime!"); }
+            else if (Last_nameTextBox.Text == "")
+            { MessageBox.Show("Unesite prezime!"); }
+            else if (Phone_numberTextBox.Text == "")
+            { MessageBox.Show("Unesite broj telefona!"); }
+            else if (AddressTextBox.Text == "")
+            { MessageBox.Show("Unesite adresu stanovanja!"); }
+            else if (PasswordTextBox.Text == "")
+            { MessageBox.Show("Unesite sifru!"); }
+            else if (Access_levelTextBox.Text == "")
+            { MessageBox.Show("Unesite nivo pristupa!"); }
+
+
+            else
+            {
+                MessageBox.Show("Unos je uspio!");
+                First_nameTextBox.Clear();
+                Last_nameTextBox.Clear();
+                Phone_numberTextBox.Clear();
+                AddressTextBox.Clear();
+                PasswordTextBox.Clear();
+                Access_levelTextBox.Clear();
+                First_nameTextBox.Focus();
+
+            }
         }
 
         private void First_nameTextBox_TextChanged(object sender, EventArgs e)

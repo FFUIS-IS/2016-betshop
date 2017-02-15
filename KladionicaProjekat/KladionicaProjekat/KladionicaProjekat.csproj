@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Code_betting_shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Code_betting_shop.Designer.cs">
+      <DependentUpon>Code_betting_shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseConnection.cs" />
     <Compile Include="Doubles.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
     <Compile Include="Workpeople.Designer.cs">
       <DependentUpon>Workpeople.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Code_betting_shop.resx">
+      <DependentUpon>Code_betting_shop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doubles.resx">
       <DependentUpon>Doubles.cs</DependentUpon>
     </EmbeddedResource>
