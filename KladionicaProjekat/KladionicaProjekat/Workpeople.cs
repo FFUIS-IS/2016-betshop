@@ -45,7 +45,30 @@ namespace KladionicaProjekat
 
             try
             {
-                command.ExecuteNonQuery();
+                if (First_nameTextBox.Text == "")
+                { MessageBox.Show("Unesite ime!"); }
+                else if (Last_nameTextBox.Text == "")
+                { MessageBox.Show("Unesite prezime!"); }
+                else if (PasswordTextBox.Text == "")
+                { MessageBox.Show("Unesite sifru!"); }
+                else if (Access_levelTextBox.Text == "")
+                { MessageBox.Show("Unesite nivo pristupa!"); }
+
+
+                else
+                {
+
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Unos je uspio!");
+                    First_nameTextBox.Clear();
+                    Last_nameTextBox.Clear();
+                    Phone_numberTextBox.Clear();
+                    AddressTextBox.Clear();
+                    PasswordTextBox.Clear();
+                    Access_levelTextBox.Clear();
+                    First_nameTextBox.Focus();
+
+                }
             }
 
             catch (Exception ee)
@@ -57,36 +80,14 @@ namespace KladionicaProjekat
 
             }
 
-
-            if (First_nameTextBox.Text == "")
-            { MessageBox.Show("Unesite ime!"); }
-            else if (Last_nameTextBox.Text == "")
-            { MessageBox.Show("Unesite prezime!"); }
-            else if (Phone_numberTextBox.Text == "")
-            { MessageBox.Show("Unesite broj telefona!"); }
-            else if (AddressTextBox.Text == "")
-            { MessageBox.Show("Unesite adresu stanovanja!"); }
-            else if (PasswordTextBox.Text == "")
-            { MessageBox.Show("Unesite sifru!"); }
-            else if (Access_levelTextBox.Text == "")
-            { MessageBox.Show("Unesite nivo pristupa!"); }
-
-
-            else
-            {
-                MessageBox.Show("Unos je uspio!");
-                First_nameTextBox.Clear();
-                Last_nameTextBox.Clear();
-                Phone_numberTextBox.Clear();
-                AddressTextBox.Clear();
-                PasswordTextBox.Clear();
-                Access_levelTextBox.Clear();
-                First_nameTextBox.Focus();
-
-            }
         }
 
         private void First_nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

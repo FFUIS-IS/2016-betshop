@@ -41,18 +41,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(39, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Description_sports";
+            this.label1.Text = "Opis sporta";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(39, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "League_Id";
+            this.label2.Text = "Liga id";
             // 
             // Description_sportsTextBox
             // 
@@ -76,6 +76,7 @@
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 

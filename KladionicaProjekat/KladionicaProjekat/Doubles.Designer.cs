@@ -41,18 +41,19 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(28, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Name";
+            this.label1.Text = "Naziv";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(28, 93);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Sports_Id";
+            this.label2.Text = "Sport id";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // NameTextBox
             // 
@@ -76,6 +77,7 @@
             this.SaveButton.TabIndex = 4;
             this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 

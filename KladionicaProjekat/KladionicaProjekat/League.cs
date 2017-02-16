@@ -32,7 +32,17 @@ namespace KladionicaProjekat
 
             try
             {
-                command.ExecuteNonQuery();
+                if (Type_leaguesTextBox.Text == "")
+                { MessageBox.Show("Unesite vrstu lige!"); }
+
+                else
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Unos je uspio!");
+                    Type_leaguesTextBox.Clear();
+                    Type_leaguesTextBox.Focus();
+                }
+                
             }
 
             catch (Exception ee)
@@ -45,16 +55,7 @@ namespace KladionicaProjekat
             }
 
 
-            if (Type_leaguesTextBox.Text == "")
-            { MessageBox.Show("Unesite vrstu lige!"); }
-
-
-            else
-            {
-                MessageBox.Show("Unos je uspio!");
-                Type_leaguesTextBox.Clear();
-                Type_leaguesTextBox.Focus();
-            }
+            
         }
     }
 }

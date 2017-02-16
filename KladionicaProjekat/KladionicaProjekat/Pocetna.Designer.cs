@@ -37,6 +37,7 @@
             this.sportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leagueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gametypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             this.doublesToolStripMenuItem,
             this.sportsToolStripMenuItem,
             this.leagueToolStripMenuItem,
-            this.gametypeToolStripMenuItem});
+            this.gametypeToolStripMenuItem,
+            this.tiketToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(814, 24);
@@ -60,58 +62,65 @@
             // codebettingshopToolStripMenuItem
             // 
             this.codebettingshopToolStripMenuItem.Name = "codebettingshopToolStripMenuItem";
-            this.codebettingshopToolStripMenuItem.Size = new System.Drawing.Size(121, 20);
-            this.codebettingshopToolStripMenuItem.Text = "Code_betting_shop";
+            this.codebettingshopToolStripMenuItem.Size = new System.Drawing.Size(131, 20);
+            this.codebettingshopToolStripMenuItem.Text = "Sifra uplatnog mjesta";
             this.codebettingshopToolStripMenuItem.Click += new System.EventHandler(this.codebettingshopToolStripMenuItem_Click);
             // 
             // workpeopleToolStripMenuItem
             // 
             this.workpeopleToolStripMenuItem.Name = "workpeopleToolStripMenuItem";
-            this.workpeopleToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.workpeopleToolStripMenuItem.Text = "Workpeople";
+            this.workpeopleToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.workpeopleToolStripMenuItem.Text = "Zaposleni";
             this.workpeopleToolStripMenuItem.Click += new System.EventHandler(this.workpeopleToolStripMenuItem_Click);
             // 
             // playerToolStripMenuItem
             // 
             this.playerToolStripMenuItem.Name = "playerToolStripMenuItem";
-            this.playerToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.playerToolStripMenuItem.Text = "Player";
+            this.playerToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.playerToolStripMenuItem.Text = "Igrac";
             this.playerToolStripMenuItem.Click += new System.EventHandler(this.playerToolStripMenuItem_Click);
             // 
             // eventToolStripMenuItem
             // 
             this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.eventToolStripMenuItem.Text = "Event";
+            this.eventToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.eventToolStripMenuItem.Text = "Dogadjaj";
             this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
             // 
             // doublesToolStripMenuItem
             // 
             this.doublesToolStripMenuItem.Name = "doublesToolStripMenuItem";
-            this.doublesToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.doublesToolStripMenuItem.Text = "Doubles";
+            this.doublesToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.doublesToolStripMenuItem.Text = "Parovi";
             this.doublesToolStripMenuItem.Click += new System.EventHandler(this.doublesToolStripMenuItem_Click);
             // 
             // sportsToolStripMenuItem
             // 
             this.sportsToolStripMenuItem.Name = "sportsToolStripMenuItem";
-            this.sportsToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.sportsToolStripMenuItem.Text = "Sports";
+            this.sportsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
+            this.sportsToolStripMenuItem.Text = "Sport";
             this.sportsToolStripMenuItem.Click += new System.EventHandler(this.sportsToolStripMenuItem_Click);
             // 
             // leagueToolStripMenuItem
             // 
             this.leagueToolStripMenuItem.Name = "leagueToolStripMenuItem";
-            this.leagueToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.leagueToolStripMenuItem.Text = "League";
+            this.leagueToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.leagueToolStripMenuItem.Text = "Liga";
             this.leagueToolStripMenuItem.Click += new System.EventHandler(this.leagueToolStripMenuItem_Click);
             // 
             // gametypeToolStripMenuItem
             // 
             this.gametypeToolStripMenuItem.Name = "gametypeToolStripMenuItem";
-            this.gametypeToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
-            this.gametypeToolStripMenuItem.Text = "Game_type";
+            this.gametypeToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.gametypeToolStripMenuItem.Text = "Tip igre";
             this.gametypeToolStripMenuItem.Click += new System.EventHandler(this.gametypeToolStripMenuItem_Click);
+            // 
+            // tiketToolStripMenuItem
+            // 
+            this.tiketToolStripMenuItem.Name = "tiketToolStripMenuItem";
+            this.tiketToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.tiketToolStripMenuItem.Text = "Tiket";
+            this.tiketToolStripMenuItem.Click += new System.EventHandler(this.tiketToolStripMenuItem_Click);
             // 
             // Pocetna
             // 
@@ -141,5 +150,6 @@
         private System.Windows.Forms.ToolStripMenuItem sportsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem leagueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gametypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiketToolStripMenuItem;
     }
 }

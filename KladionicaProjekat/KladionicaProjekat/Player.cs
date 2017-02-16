@@ -40,7 +40,23 @@ namespace KladionicaProjekat
 
             try
             {
-                command.ExecuteNonQuery();
+                if (First_nameTextBox.Text == "")
+                { MessageBox.Show("Unesite ime!"); }
+                else if (Last_nameTextBox.Text == "")
+                { MessageBox.Show("Unesite prezime!"); }
+                else if (Date_of_birthTextBox.Text == "")
+                { MessageBox.Show("Unesite godinu rodjenja!"); }
+                else
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Unos je uspio!");
+                    First_nameTextBox.Clear();
+                    Last_nameTextBox.Clear();
+                    Date_of_birthTextBox.Clear();
+                    First_nameTextBox.Focus();
+
+                }
+                
             }
 
             catch (Exception ee)
@@ -49,26 +65,6 @@ namespace KladionicaProjekat
 
                 MessageBox.Show("Unos nije uspio! \r Greska: " + ee.Message);
                 return;
-
-            }
-
-
-            if (First_nameTextBox.Text == "")
-            { MessageBox.Show("Unesite ime!"); }
-            else if (Last_nameTextBox.Text == "")
-            { MessageBox.Show("Unesite prezime!"); }
-            else if (Date_of_birthTextBox.Text == "")
-            { MessageBox.Show("Unesite godinu rodjenja!"); }
-
-
-
-            else
-            {
-                MessageBox.Show("Unos je uspio!");
-                First_nameTextBox.Clear();
-                Last_nameTextBox.Clear();
-                Date_of_birthTextBox.Clear();
-                First_nameTextBox.Focus();
 
             }
         }

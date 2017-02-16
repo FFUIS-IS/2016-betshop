@@ -32,7 +32,18 @@ namespace KladionicaProjekat
 
             try
             {
-                command.ExecuteNonQuery();
+                
+                if (Kind_of_gameTextBox.Text == "")
+                { MessageBox.Show("Unesite vrstu igre!"); }
+
+
+                else
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Unos je uspio!");
+                    Kind_of_gameTextBox.Clear();
+                    Kind_of_gameTextBox.Focus();
+                }
             }
 
             catch (Exception ee)
@@ -45,17 +56,13 @@ namespace KladionicaProjekat
             }
 
 
-            if (Kind_of_gameTextBox.Text == "")
-            { MessageBox.Show("Unesite vrstu igre!"); }
+            
 
 
-            else
-            {
-                MessageBox.Show("Unos je uspio!");
-                Kind_of_gameTextBox.Clear();
-                Kind_of_gameTextBox.Focus();
-            }
+        }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

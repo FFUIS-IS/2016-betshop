@@ -11,9 +11,9 @@ using System.Data.SqlServerCe;
 
 namespace KladionicaProjekat
 {
-    public partial class Code_betting_shop : Form
+    public partial class Event : Form
     {
-        public Code_betting_shop()
+        public Event()
         {
             InitializeComponent();
         }
@@ -23,22 +23,33 @@ namespace KladionicaProjekat
             this.Close();
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void SaveButton_Click(object sender, EventArgs e)
         {
 
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Code_betting_shop ([Name], [Address]) VALUES" + " ('" + NameTextBox.Text + "', '" + AddressTextBox.Text + "'); ", Connection);
+            
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Events ([Date], [Time_of], [Doubles_Id]) VALUES" + " ('" + DateTextBox.Text + "', '" + Time_ofTextBox.Text +"', '" + Doubles_IdTextBox.Text +"'); ", Connection);
 
             try
             {
 
-                if (NameTextBox.Text == "")
-                { MessageBox.Show("Unesite naziv grada!"); }
-                else if (AddressTextBox.Text == "")
-                { MessageBox.Show("Unesite adresu!"); }
-               
+                if (DateTextBox.Text == "")
+                { MessageBox.Show("Unesite datum!"); }
+                else if (Time_ofTextBox.Text == "")
+                { MessageBox.Show("Unesite vrijeme!"); }
+                else if (Doubles_IdTextBox.Text == "")
+                { MessageBox.Show("Unesite porove!");  }
 
 
 
@@ -46,9 +57,11 @@ namespace KladionicaProjekat
                 {
                     command.ExecuteNonQuery();
                     MessageBox.Show("Unos je uspio!");
-                    NameTextBox.Clear();
-                    AddressTextBox.Clear();
-                    NameTextBox.Focus();
+                    DateTextBox.Clear();
+                    Time_ofTextBox.Clear();
+                    Doubles_IdTextBox.Clear();
+                    DateTextBox.Focus();
+
 
                 }
             }

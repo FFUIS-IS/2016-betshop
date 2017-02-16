@@ -43,27 +43,29 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(37, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Date";
+            this.label1.Text = "Datum";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(37, 79);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Time_of";
+            this.label2.Text = "Vrijeme odrzavanja";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
+            this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Doubles_Id";
+            this.label3.Text = "Parovi id";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // DateTextBox
             // 
@@ -94,6 +96,7 @@
             this.SaveButton.TabIndex = 6;
             this.SaveButton.Text = "SAVE";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CancelButton
             // 

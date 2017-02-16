@@ -77,5 +77,11 @@ namespace KladionicaProjekat
             Code_betting_shop CodeBettigShop = new Code_betting_shop();
             CodeBettigShop.ShowDialog();
         }
+
+        private void tiketToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Ticket Tickets = new Ticket();
+            Tickets.ShowDialog();
+        }
     }
 }
