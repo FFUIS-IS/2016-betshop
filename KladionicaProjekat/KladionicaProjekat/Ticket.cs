@@ -28,7 +28,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
 
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Event ([Date_of_payment], [Time_payment], [Code_betting_shop_code], [Ticket_control_number], [Payment_amount], [Player_Id], [System], [Workpeople_Id]) VALUES" + " ('" + Date_of_paymentTextBox.Text + "', '" + Time_paymentTextBox.Text + "', '" + Code_betting_shop_codeTextBox.Text + "', '" + Ticket_control_numberTextBox.Text + "', '" + Payment_amountTextBox.Text + "', '" + Player_IdTextBox.Text + "', '" + SystemTextBox.Text + "', '" + Workpeople_IdTextBox.Text + "'); ", Connection);
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Event ([Date_of_payment], [Time_payment], [Code_betting_shop_Id], [Ticket_control_number], [Payment_amount], [Player_Id], [System], [Workpeople_Id]) VALUES" + " ('" + Date_of_paymentTextBox.Text + "', '" + Time_paymentTextBox.Text + "', '" + Code_betting_shop_IdTextBox.Text + "', '" + Ticket_control_numberTextBox.Text + "', '" + Payment_amountTextBox.Text + "', '" + Player_IdTextBox.Text + "', '" + SystemTextBox.Text + "', '" + Workpeople_IdTextBox.Text + "'); ", Connection);
 
             try
             {
@@ -37,7 +37,7 @@ namespace KladionicaProjekat
                 { MessageBox.Show("Unesite datum!"); }
                 else if (Time_paymentTextBox.Text == "")
                 { MessageBox.Show("Unesite vrijeme!"); }
-                else if (Code_betting_shop_codeTextBox.Text == "")
+                else if (Code_betting_shop_IdTextBox.Text == "")
                 { MessageBox.Show("Unesite sifru uplatnog mjesta!"); }
                 else if (Ticket_control_numberTextBox.Text == "")
                 { MessageBox.Show("Unesite kontrolni broj tiketa!"); }
@@ -45,8 +45,6 @@ namespace KladionicaProjekat
                 { MessageBox.Show("Unesite iznos uplate!"); }
                 else if (Player_IdTextBox.Text == "")
                 { MessageBox.Show("Unesite sifru igraca!"); }
-                else if (SystemTextBox.Text == "")
-                { MessageBox.Show("Potvrdite sistem!"); }
                 else if (Workpeople_IdTextBox.Text == "")
                 { MessageBox.Show("Unesite ime zaposlenog!"); }
 
@@ -59,7 +57,7 @@ namespace KladionicaProjekat
                     MessageBox.Show("Unos je uspio!");
                     Date_of_paymentTextBox.Clear();
                     Time_paymentTextBox.Clear();
-                    Code_betting_shop_codeTextBox.Clear();
+                    Code_betting_shop_IdTextBox.Clear();
                     Ticket_control_numberTextBox.Clear();
                     Payment_amountTextBox.Clear();
                     Player_IdTextBox.Clear();

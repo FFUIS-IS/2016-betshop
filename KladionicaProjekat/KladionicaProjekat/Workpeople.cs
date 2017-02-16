@@ -40,8 +40,7 @@ namespace KladionicaProjekat
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Workpeople " + "([First_name], [Last_name], [Phone_number], [Address], [Password], [Access_level]) VALUES" +  " ('" + First_nameTextBox.Text +"', '" + Last_nameTextBox.Text +"', '" + Phone_numberTextBox.Text +"', '" + AddressTextBox.Text +"', '" + PasswordTextBox.Text +"', '" + Access_levelTextBox.Text +"', ); ", Connection);
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Workpeople ([First_name], [Last_name], [Phone_number], [Address], [Password], [Access_level]) VALUES" + " ('" + First_nameTextBox.Text + "', '" + Last_nameTextBox.Text +"', '" + Phone_numberTextBox.Text +"', '" + AddressTextBox.Text +"', '" + PasswordTextBox.Text +"', '" + Access_levelTextBox.Text +"'); ", Connection);
 
             try
             {

@@ -39,7 +39,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
             
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Events ([Date], [Time_of], [Doubles_Id]) VALUES" + " ('" + DateTextBox.Text + "', '" + Time_ofTextBox.Text +"', '" + Doubles_IdTextBox.Text +"'); ", Connection);
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Event ([Date], [Time_of], [Doubles_Id]) VALUES" + " ('" + DateTextBox.Text + "', '" + Time_ofTextBox.Text +"', '" + Doubles_IdTextBox.Text +"'); ", Connection);
 
             try
             {

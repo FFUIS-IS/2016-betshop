@@ -38,7 +38,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.Date_of_paymentTextBox = new System.Windows.Forms.TextBox();
             this.Time_paymentTextBox = new System.Windows.Forms.TextBox();
-            this.Code_betting_shop_codeTextBox = new System.Windows.Forms.TextBox();
+            this.Code_betting_shop_IdTextBox = new System.Windows.Forms.TextBox();
             this.Ticket_control_numberTextBox = new System.Windows.Forms.TextBox();
             this.Payment_amountTextBox = new System.Windows.Forms.TextBox();
             this.Player_IdTextBox = new System.Windows.Forms.TextBox();
@@ -134,12 +134,12 @@
             this.Time_paymentTextBox.Size = new System.Drawing.Size(100, 20);
             this.Time_paymentTextBox.TabIndex = 9;
             // 
-            // Code_betting_shop_codeTextBox
+            // Code_betting_shop_IdTextBox
             // 
-            this.Code_betting_shop_codeTextBox.Location = new System.Drawing.Point(162, 123);
-            this.Code_betting_shop_codeTextBox.Name = "Code_betting_shop_codeTextBox";
-            this.Code_betting_shop_codeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.Code_betting_shop_codeTextBox.TabIndex = 10;
+            this.Code_betting_shop_IdTextBox.Location = new System.Drawing.Point(162, 123);
+            this.Code_betting_shop_IdTextBox.Name = "Code_betting_shop_IdTextBox";
+            this.Code_betting_shop_IdTextBox.Size = new System.Drawing.Size(100, 20);
+            this.Code_betting_shop_IdTextBox.TabIndex = 10;
             // 
             // Ticket_control_numberTextBox
             // 
@@ -208,7 +208,7 @@
             this.Controls.Add(this.Player_IdTextBox);
             this.Controls.Add(this.Payment_amountTextBox);
             this.Controls.Add(this.Ticket_control_numberTextBox);
-            this.Controls.Add(this.Code_betting_shop_codeTextBox);
+            this.Controls.Add(this.Code_betting_shop_IdTextBox);
             this.Controls.Add(this.Time_paymentTextBox);
             this.Controls.Add(this.Date_of_paymentTextBox);
             this.Controls.Add(this.label8);
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Date_of_paymentTextBox;
         private System.Windows.Forms.TextBox Time_paymentTextBox;
-        private System.Windows.Forms.TextBox Code_betting_shop_codeTextBox;
+        private System.Windows.Forms.TextBox Code_betting_shop_IdTextBox;
         private System.Windows.Forms.TextBox Ticket_control_numberTextBox;
         private System.Windows.Forms.TextBox Payment_amountTextBox;
         private System.Windows.Forms.TextBox Player_IdTextBox;
