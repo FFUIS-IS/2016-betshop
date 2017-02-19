@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Event
+    class EventModels
     {
         public int Id { get; set; }
         public DateTime Date { get; set; }
@@ -14,7 +14,7 @@ namespace KladionicaProjekat.Models
         public int Doubles_Id { get; set; }
 
 
-        public Event(int id, DateTime date, DateTime time_of, int doubles_Id)
+        public EventModels(int id, DateTime date, DateTime time_of, int doubles_Id)
         {
             Id = id;
             Date = date;

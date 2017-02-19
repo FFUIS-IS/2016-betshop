@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Workpeole
+    class WorkpeolesModels
     {
         public int Id { get; set; }
-        public char First_name { get; set; }
-        public char Last_name { get; set; }
-        public char Phone_number { get; set; }
-        public char Address { get; set; }
-        public char Password { get; set; }
-        public char Acces_level { get; set; }
+        public string First_name { get; set; }
+        public string Last_name { get; set; }
+        public string Phone_number { get; set; }
+        public string Address { get; set; }
+        public string Password { get; set; }
+        public string Acces_level { get; set; }
         public int User_Id { get; set; }
 
 
-        public Workpeole(int id, char first_name,  char last_name, char phone_number, char address, char password, char acces_level, int user_Id)
+        public WorkpeolesModels(int id, string first_name, string last_name, string phone_number, string address, string password, string acces_level, int user_Id)
         {
             Id = id;
             First_name = first_name;

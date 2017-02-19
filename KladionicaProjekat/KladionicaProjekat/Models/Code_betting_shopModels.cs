@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Doubles
+    class Code_betting_shopModels
     {
         public int Id { get; set; }
-        public char Name { get; set; }
-        public int Sports_Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set;  }
 
 
 
 
 
-        public Doubles(int id, char name, int sports_Id)
+        public Code_betting_shopModels(int id, string name, string address)
         {
             Id = id;
             Name = name;
-            Sports_Id = sports_Id;
+            Address = address;
         }
     }
 }

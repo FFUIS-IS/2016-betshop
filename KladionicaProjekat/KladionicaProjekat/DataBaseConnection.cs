@@ -19,8 +19,8 @@ namespace KladionicaProjekat
 
         private DataBaseConnection()
         {
-            Pocetna Pc = new Pocetna();
-            string Dir = Pc.GetHomeDirectory();
+            LoginForma LF = new LoginForma();
+            string Dir = LF.GetHomeDirectory();
             string connectionString = "Password = 'milos123'; " + "Data Source =" + @Dir + "\\bazakladionice.sdf";
 
 

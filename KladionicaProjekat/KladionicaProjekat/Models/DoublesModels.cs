@@ -6,17 +6,21 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class User
+    class DoublesModels
     {
         public int Id { get; set; }
-        public char UserName { get; set; }
-        public char Password { get; set; }
+        public string Name { get; set; }
+        public int Sports_Id { get; set; }
 
-        public User(int id, char userName, char password)
+
+
+
+
+        public DoublesModels(int id, string name, int sports_Id)
         {
             Id = id;
-            UserName = userName;
-            Password = password;
+            Name = name;
+            Sports_Id = sports_Id;
         }
     }
 }

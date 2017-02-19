@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Administrator
+    class LoginModels
     {
         public int Id { get; set; }
-        public char Name { get; set; }
-        public char SurName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
         public int User_Id { get; set; }
 
-        public Administrator(int id, char name, char surName, int user_Id)
+        public LoginModels(int id, string userName, string password, int user_Id)
         {
             Id = id;
-            Name = name;
-            SurName = surName;
+            UserName = userName;
+            Password = password;
             User_Id = user_Id;
         }
     }

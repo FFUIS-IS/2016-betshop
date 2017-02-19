@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Player
+    class PlayersModels
     {
         public int Id { get; set; }
-        public char First_name { get; set; }
-        public char Last_name { get; set; }
-        public DateTime Date_of_birth { get; set; }
+        public string First_name { get; set; }
+        public string Last_name { get; set; }
+        public string Date_of_birth { get; set; }
         public int User_Id { get; set; }
 
 
-
-
-
-        public Player(int id, char first_name, char last_name, DateTime date_of_birth, int user_Id)
+        public PlayersModels(int id, string first_name, string last_name, string date_of_birth, int user_Id)
         {
             Id = id;
             First_name = first_name;

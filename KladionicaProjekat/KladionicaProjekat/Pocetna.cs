@@ -18,12 +18,7 @@ namespace KladionicaProjekat
         {
             InitializeComponent();
         }
-          string home = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory().ToString()).ToString()).ToString();
-
-        public string GetHomeDirectory()
-        {
-            return home;
-}
+     
         private void Pocetna_Load(object sender, EventArgs e)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;

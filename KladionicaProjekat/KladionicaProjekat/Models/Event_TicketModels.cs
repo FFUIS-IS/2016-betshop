@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class Event_Ticket
+    class Event_TicketModels
     {
-        public char Ticket_Id { get; set; }
+        public string Ticket_Id { get; set; }
         public int Event_Id { get; set; }
         public int Game_type_Id { get; set; }
 
@@ -16,7 +16,7 @@ namespace KladionicaProjekat.Models
 
 
 
-        public Event_Ticket(char ticket_Id, int event_Id, int game_type_Id)
+        public Event_TicketModels(string ticket_Id, int event_Id, int game_type_Id)
         {
             Ticket_Id = ticket_Id;
             Event_Id = event_Id;

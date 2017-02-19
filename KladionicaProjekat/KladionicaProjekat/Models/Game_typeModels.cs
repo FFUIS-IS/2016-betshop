@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace KladionicaProjekat.Models
 {
-    class League
+    class Game_typeModels
     {
         public int Id { get; set; }
-        public char Type_leagues { get; set; }
+        public string Kind_of_game { get; set; }
 
 
-        public League(int id, char type_leagues)
+
+        public Game_typeModels(int id, string kind_of_game)
         {
             Id = id;
-            Type_leagues = type_leagues;
+            Kind_of_game = kind_of_game;
         }
     }
 }

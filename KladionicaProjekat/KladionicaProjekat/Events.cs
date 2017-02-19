@@ -39,7 +39,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
             
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Event ([Date], [Time_of], [Doubles_Id]) VALUES" + " ('" + DateTextBox.Text + "', '" + Time_ofTextBox.Text +"', '" + Doubles_IdTextBox.Text +"'); ", Connection);
+            SqlCeCommand command = new SqlCeCommand("INSERT INTO Event ([Date], [Time_of], [Doubles_Id1]) VALUES" + " ('" + DateTextBox.Text + "', '" + Time_ofTextBox.Text +"', '" + Doubles_Id1TextBox.Text +"'); ", Connection);
 
             try
             {
@@ -48,7 +48,7 @@ namespace KladionicaProjekat
                 { MessageBox.Show("Unesite datum!"); }
                 else if (Time_ofTextBox.Text == "")
                 { MessageBox.Show("Unesite vrijeme!"); }
-                else if (Doubles_IdTextBox.Text == "")
+                else if (Doubles_Id1TextBox.Text == "")
                 { MessageBox.Show("Unesite porove!");  }
 
 
@@ -59,7 +59,7 @@ namespace KladionicaProjekat
                     MessageBox.Show("Unos je uspio!");
                     DateTextBox.Clear();
                     Time_ofTextBox.Clear();
-                    Doubles_IdTextBox.Clear();
+                    Doubles_Id1TextBox.Clear();
                     DateTextBox.Focus();
 
 
@@ -74,6 +74,11 @@ namespace KladionicaProjekat
                 return;
 
             }
+        }
+
+        private void Doubles_Id1TextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

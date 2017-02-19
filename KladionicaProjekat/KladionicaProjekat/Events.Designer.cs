@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.DateTextBox = new System.Windows.Forms.TextBox();
             this.Time_ofTextBox = new System.Windows.Forms.TextBox();
-            this.Doubles_IdTextBox = new System.Windows.Forms.TextBox();
+            this.Doubles_Id1TextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -62,9 +62,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(37, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Parovi id";
+            this.label3.Text = "Parovi";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // DateTextBox
@@ -81,16 +81,17 @@
             this.Time_ofTextBox.Size = new System.Drawing.Size(100, 20);
             this.Time_ofTextBox.TabIndex = 4;
             // 
-            // Doubles_IdTextBox
+            // Doubles_Id1TextBox
             // 
-            this.Doubles_IdTextBox.Location = new System.Drawing.Point(195, 135);
-            this.Doubles_IdTextBox.Name = "Doubles_IdTextBox";
-            this.Doubles_IdTextBox.Size = new System.Drawing.Size(100, 20);
-            this.Doubles_IdTextBox.TabIndex = 5;
+            this.Doubles_Id1TextBox.Location = new System.Drawing.Point(195, 135);
+            this.Doubles_Id1TextBox.Name = "Doubles_Id1TextBox";
+            this.Doubles_Id1TextBox.Size = new System.Drawing.Size(100, 20);
+            this.Doubles_Id1TextBox.TabIndex = 5;
+            this.Doubles_Id1TextBox.TextChanged += new System.EventHandler(this.Doubles_Id1TextBox_TextChanged);
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(40, 207);
+            this.SaveButton.Location = new System.Drawing.Point(40, 237);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 6;
@@ -100,7 +101,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(195, 207);
+            this.CancelButton.Location = new System.Drawing.Point(195, 237);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 7;
@@ -112,10 +113,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 260);
+            this.ClientSize = new System.Drawing.Size(343, 307);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.Doubles_IdTextBox);
+            this.Controls.Add(this.Doubles_Id1TextBox);
             this.Controls.Add(this.Time_ofTextBox);
             this.Controls.Add(this.DateTextBox);
             this.Controls.Add(this.label3);
@@ -135,7 +136,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox DateTextBox;
         private System.Windows.Forms.TextBox Time_ofTextBox;
-        private System.Windows.Forms.TextBox Doubles_IdTextBox;
+        private System.Windows.Forms.TextBox Doubles_Id1TextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
     }

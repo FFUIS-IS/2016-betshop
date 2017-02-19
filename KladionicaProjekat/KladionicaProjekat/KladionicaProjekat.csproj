@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckLogin.cs" />
     <Compile Include="Code_betting_shop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,12 +69,6 @@
     <Compile Include="Events.Designer.cs">
       <DependentUpon>Events.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Game_type.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,20 +81,27 @@
     <Compile Include="League.Designer.cs">
       <DependentUpon>League.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Administrator.cs" />
-    <Compile Include="Models\Code_betting_shop.cs" />
-    <Compile Include="Models\Doubles.cs" />
-    <Compile Include="Models\Event.cs" />
-    <Compile Include="Models\Event_Ticket.cs" />
-    <Compile Include="Models\Game_type.cs" />
-    <Compile Include="Models\Game_type_Doubles.cs" />
-    <Compile Include="Models\League.cs" />
-    <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\Sports.cs" />
-    <Compile Include="Models\Sports_Game_type.cs" />
-    <Compile Include="Models\Ticket.cs" />
-    <Compile Include="Models\User.cs" />
-    <Compile Include="Models\Workpeole.cs" />
+    <Compile Include="LoginForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForma.Designer.cs">
+      <DependentUpon>LoginForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdministratorModels.cs" />
+    <Compile Include="Models\Code_betting_shopModels.cs" />
+    <Compile Include="Models\DoublesModels.cs" />
+    <Compile Include="Models\EventModels.cs" />
+    <Compile Include="Models\Event_TicketModels.cs" />
+    <Compile Include="Models\Game_typeModels.cs" />
+    <Compile Include="Models\Game_type_DoublesModels.cs" />
+    <Compile Include="Models\LeagueModels.cs" />
+    <Compile Include="Models\LoginModels.cs" />
+    <Compile Include="Models\PlayerModels.cs" />
+    <Compile Include="Models\SportModels.cs" />
+    <Compile Include="Models\Sports_Game_typeModels.cs" />
+    <Compile Include="Models\TicketModels.cs" />
+    <Compile Include="Models\UserModels.cs" />
+    <Compile Include="Models\WorkpeolesModels.cs" />
     <Compile Include="Player.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +116,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AministratorRepository.cs" />
+    <Compile Include="Repository\Code_betting_shopRepository.cs" />
+    <Compile Include="Repository\DoublesRepository.cs" />
+    <Compile Include="Repository\EventRepository.cs" />
+    <Compile Include="Repository\Event_TicketRepository.cs" />
+    <Compile Include="Repository\Game_typeRepository.cs" />
+    <Compile Include="Repository\Game_type_DoublesRepository.cs" />
+    <Compile Include="Repository\LeagueRepository.cs" />
+    <Compile Include="Repository\LoginRepository.cs" />
+    <Compile Include="Repository\PlayerRepository.cs" />
+    <Compile Include="Repository\SportsRepository.cs" />
+    <Compile Include="Repository\Sports_Game_typeRepository.cs" />
+    <Compile Include="Repository\TicketRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Repository\WorkpeopleRepository.cs" />
     <Compile Include="Sports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,14 +158,14 @@
     <EmbeddedResource Include="Events.resx">
       <DependentUpon>Events.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Game_type.resx">
       <DependentUpon>Game_type.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="League.resx">
       <DependentUpon>League.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForma.resx">
+      <DependentUpon>LoginForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Player.resx">
       <DependentUpon>Player.cs</DependentUpon>
