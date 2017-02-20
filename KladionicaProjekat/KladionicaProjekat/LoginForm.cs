@@ -13,11 +13,12 @@ using System.IO;
 
 namespace KladionicaProjekat
 {
-    public partial class LoginForma : Form
+    public partial class LoginForm : Form
     {
-        public LoginForma()
+        public LoginForm()
         {
             InitializeComponent();
+            CenterToScreen();
         }
         string home = Directory.GetParent(Directory.GetParent(Directory.GetCurrentDirectory().ToString()).ToString()).ToString();
 

@@ -16,7 +16,7 @@ namespace KladionicaProjekat.Repository
     {
         public static string GetFirst_nameQuery()
         {
-            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+            
             string query;
             query = @"SELECT First_name FROM Player ";
             return query;
@@ -25,11 +25,12 @@ namespace KladionicaProjekat.Repository
 
         public static string GetLast_nameQuery()
         {
-            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+            
             string query;
             query = @"SELECT Last_name FROM Player ";
             return query;
         }
+
         public static bool AddPlayer(string PlayerFirst_name, string PlayerLast_name, DateTime Date_of_birth, string PlayerUserName, string Password)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;

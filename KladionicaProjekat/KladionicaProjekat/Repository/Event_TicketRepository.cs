@@ -13,8 +13,12 @@ namespace KladionicaProjekat.Repository
 {
     class Event_TicketRepository
     {
+
+
         public static void AddEvent_Ticket(int Event_Id, int Game_type_Id, int Ticket_Id)
         {
+            
+
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
             bool flag = false;
@@ -35,7 +39,7 @@ namespace KladionicaProjekat.Repository
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
         }

@@ -38,6 +38,8 @@
             this.leagueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gametypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiketToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.LogOutButton = new System.Windows.Forms.Button();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +54,8 @@
             this.sportsToolStripMenuItem,
             this.leagueToolStripMenuItem,
             this.gametypeToolStripMenuItem,
-            this.tiketToolStripMenuItem});
+            this.tiketToolStripMenuItem,
+            this.adminToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(814, 24);
@@ -122,11 +125,29 @@
             this.tiketToolStripMenuItem.Text = "Tiket";
             this.tiketToolStripMenuItem.Click += new System.EventHandler(this.tiketToolStripMenuItem_Click);
             // 
+            // LogOutButton
+            // 
+            this.LogOutButton.Location = new System.Drawing.Point(727, 1);
+            this.LogOutButton.Name = "LogOutButton";
+            this.LogOutButton.Size = new System.Drawing.Size(75, 23);
+            this.LogOutButton.TabIndex = 1;
+            this.LogOutButton.Text = "Odjava";
+            this.LogOutButton.UseVisualStyleBackColor = true;
+            this.LogOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
+            // 
             // Pocetna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 394);
+            this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Pocetna";
@@ -151,5 +172,7 @@
         private System.Windows.Forms.ToolStripMenuItem leagueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gametypeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tiketToolStripMenuItem;
+        private System.Windows.Forms.Button LogOutButton;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
     }
 }

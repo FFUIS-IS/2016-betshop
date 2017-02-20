@@ -12,6 +12,7 @@ namespace KladionicaProjekat.Repository
 {
     class EventRepository
     {
+
         public static bool AddEvent(DateTime Date, DateTime Time_of, string Doubles_Id1)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
@@ -38,7 +39,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;

@@ -1,14 +1,14 @@
-﻿using System;
+﻿using KladionicaProjekat.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlServerCe;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlServerCe;
-using System.Data.SqlClient;
 
 namespace KladionicaProjekat
 {
@@ -19,6 +19,7 @@ namespace KladionicaProjekat
         public Workpeople()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,32 +41,39 @@ namespace KladionicaProjekat
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Workpeople ([First_name], [Last_name], [Phone_number], [Address], [Password], [Access_level]) VALUES" + " ('" + First_nameTextBox.Text + "', '" + Last_nameTextBox.Text +"', '" + Phone_numberTextBox.Text +"', '" + AddressTextBox.Text +"', '" + PasswordTextBox.Text +"', '" + Access_levelTextBox.Text +"'); ", Connection);
-
             try
             {
                 if (First_nameTextBox.Text == "")
                 { MessageBox.Show("Unesite ime!"); }
                 else if (Last_nameTextBox.Text == "")
                 { MessageBox.Show("Unesite prezime!"); }
-                else if (PasswordTextBox.Text == "")
-                { MessageBox.Show("Unesite sifru!"); }
                 else if (Access_levelTextBox.Text == "")
                 { MessageBox.Show("Unesite nivo pristupa!"); }
 
 
                 else
                 {
+                    bool isUnique = UserRepository.CheckUnique(First_nameTextBox.Text);
 
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Unos je uspio!");
-                    First_nameTextBox.Clear();
-                    Last_nameTextBox.Clear();
-                    Phone_numberTextBox.Clear();
-                    AddressTextBox.Clear();
-                    PasswordTextBox.Clear();
-                    Access_levelTextBox.Clear();
-                    First_nameTextBox.Focus();
+                    if (isUnique != true)
+                    {
+                        UserRepository.InsertUser(First_nameTextBox.Text, First_nameTextBox.Text + Last_nameTextBox.Text);
+                        int WorkpeopleId = UserRepository.GetIdByName(First_nameTextBox.Text);
+
+                        SqlCeCommand command = new SqlCeCommand("INSERT INTO Workpeople (First_name, Last_name, Phone_number, Address, Access_level, User_Id) VALUES" + " ('" + First_nameTextBox.Text + "', '" + Last_nameTextBox.Text + "', '" + Phone_numberTextBox.Text + "', '" + AddressTextBox.Text + "', '" + Access_levelTextBox.Text + "', '" + WorkpeopleId +"'); ", Connection);
+
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Unos je uspio!");
+                        First_nameTextBox.Clear();
+                        Last_nameTextBox.Clear();
+                        Phone_numberTextBox.Clear();
+                        AddressTextBox.Clear();
+                        Access_levelTextBox.Clear();
+                        First_nameTextBox.Focus();
+                    }
+
+                        
 
                 }
             }
@@ -81,14 +89,8 @@ namespace KladionicaProjekat
 
         }
 
-        private void First_nameTextBox_TextChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

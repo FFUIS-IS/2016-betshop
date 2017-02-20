@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KladionicaProjekat.Repository;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace KladionicaProjekat
         public Player()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -35,9 +37,6 @@ namespace KladionicaProjekat
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Player" + " ([First_name], [Last_name], [Date_of_birth]) VALUES" +  " ('" + First_nameTextBox.Text + "', '" + Last_nameTextBox.Text +"', '" + Date_of_birthTextBox.Text +"'); ", Connection);
-
             try
             {
                 if (First_nameTextBox.Text == "")
@@ -48,17 +47,25 @@ namespace KladionicaProjekat
                 { MessageBox.Show("Unesite godinu rodjenja!"); }
                 else
                 {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Unos je uspio!");
-                    First_nameTextBox.Clear();
-                    Last_nameTextBox.Clear();
-                    Date_of_birthTextBox.Clear();
-                    First_nameTextBox.Focus();
+                    bool isUnique = UserRepository.CheckUnique(First_nameTextBox.Text);
+                    if (isUnique != true)
+                    {
+                        UserRepository.InsertUser(First_nameTextBox.Text, First_nameTextBox.Text + Last_nameTextBox.Text);
+                        int PlayerId = UserRepository.GetIdByName(First_nameTextBox.Text);
+
+                        SqlCeCommand command = new SqlCeCommand("INSERT INTO Player (First_name, Last_name, Date_of_birth, User_Id) VALUES" + " ('" + First_nameTextBox.Text + "', '" + Last_nameTextBox.Text + "', '" + Date_of_birthTextBox.Value.Date.ToString("yyyy-MM-dd") + "', '" + PlayerId + "'); ", Connection);
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("Unos je uspio!");
+                        First_nameTextBox.Clear();
+                        Last_nameTextBox.Clear();
+                        First_nameTextBox.Focus();
+                    }
 
                 }
                 
             }
-
+            
             catch (Exception ee)
             {
 
@@ -67,6 +74,11 @@ namespace KladionicaProjekat
                 return;
 
             }
+        }
+
+        private void Player_Load(object sender, EventArgs e)
+        {
+            Date_of_birthTextBox.CustomFormat = "yyyy-MM-dd";
         }
     }
 }

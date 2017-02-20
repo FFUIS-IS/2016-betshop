@@ -8,7 +8,7 @@ namespace KladionicaProjekat.Models
 {
     class Event_TicketModels
     {
-        public string Ticket_Id { get; set; }
+        public int Ticket_Id { get; set; }
         public int Event_Id { get; set; }
         public int Game_type_Id { get; set; }
 
@@ -16,7 +16,7 @@ namespace KladionicaProjekat.Models
 
 
 
-        public Event_TicketModels(string ticket_Id, int event_Id, int game_type_Id)
+        public Event_TicketModels(int ticket_Id, int event_Id, int game_type_Id)
         {
             Ticket_Id = ticket_Id;
             Event_Id = event_Id;

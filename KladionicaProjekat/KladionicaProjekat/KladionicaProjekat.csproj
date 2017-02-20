@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="CheckLogin.cs" />
     <Compile Include="Code_betting_shop.cs">
       <SubType>Form</SubType>
@@ -81,11 +87,12 @@
     <Compile Include="League.Designer.cs">
       <DependentUpon>League.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForma.cs">
+    <Compile Include="Lists.cs" />
+    <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForma.Designer.cs">
-      <DependentUpon>LoginForma.cs</DependentUpon>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\AdministratorModels.cs" />
     <Compile Include="Models\Code_betting_shopModels.cs" />
@@ -149,6 +156,9 @@
     <Compile Include="Workpeople.Designer.cs">
       <DependentUpon>Workpeople.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Code_betting_shop.resx">
       <DependentUpon>Code_betting_shop.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +174,8 @@
     <EmbeddedResource Include="League.resx">
       <DependentUpon>League.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForma.resx">
-      <DependentUpon>LoginForma.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Player.resx">
       <DependentUpon>Player.cs</DependentUpon>

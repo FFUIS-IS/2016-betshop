@@ -13,6 +13,19 @@ namespace KladionicaProjekat.Repository
 {
     class Code_betting_shopRepository
     {
+        public static string GetNameCode_betting_shopQuery()
+        {
+            string query;
+            query = @"SELECT Name FROM Code_betting_shop";
+            return query;
+        }
+
+        public static string GetAddressCode_betting_shopQuery()
+        {
+            string query;
+            query = @"SELECT Address FROM Code_betting_shop";
+            return query;
+        }
 
         public static bool AddCode_betting_shop(string Name, string Address)
         {
@@ -39,7 +52,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;

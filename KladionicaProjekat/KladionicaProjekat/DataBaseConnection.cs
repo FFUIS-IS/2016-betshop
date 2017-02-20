@@ -19,7 +19,7 @@ namespace KladionicaProjekat
 
         private DataBaseConnection()
         {
-            LoginForma LF = new LoginForma();
+            LoginForm LF = new LoginForm();
             string Dir = LF.GetHomeDirectory();
             string connectionString = "Password = 'milos123'; " + "Data Source =" + @Dir + "\\bazakladionice.sdf";
 

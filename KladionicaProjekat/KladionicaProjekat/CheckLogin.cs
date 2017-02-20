@@ -24,14 +24,12 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
             if (Username.TextLength > 0 && Password.TextLength > 0)
             {
-           
-               try
+                try
                 {
-                    SqlCeCommand logincommand = new SqlCeCommand(@"SELECT * FROM User WHERE UserName=@uname and Password=@pass", Connection);
+                    SqlCeCommand logincommand = new SqlCeCommand(@"SELECT * FROM Users WHERE UserName=@uname and Password=@pass", Connection);
                     logincommand.Parameters.AddWithValue("@uname", Username.Text);
                     logincommand.Parameters.AddWithValue("@pass", Password.Text);
                     SqlCeDataReader loginReader = logincommand.ExecuteReader();
-                    MessageBox.Show((string)loginReader["Id"] + loginReader["UserName"] + loginReader["Password"]);
 
                     if (loginReader.Read() &&
                             loginReader["UserName"].ToString() == Username.Text &&
@@ -61,14 +59,14 @@ namespace KladionicaProjekat
                         else if (playerReader.Read() && user.Id == (int)playerReader["User_Id"])
                         {
                             flag = true;
-                            PlayersModels player = new PlayersModels((int)playerReader["Id"], (string)playerReader["First_name"], (string)playerReader["Last_name"], (DateTime)playerReader["Date_of_birth"], (int)playerReader["User_Id"]);
+                            PlayersModels player = new PlayersModels((int)playerReader["Id"], (string)playerReader["First_name"], (string)playerReader["Last_name"], playerReader["Date_of_birth"].ToString(), (int)playerReader["User_Id"]);
                             Form newform = new Pocetna();
                             newform.Show();
                         }
-                        else if (workpeopleReader.Read() && user.Id == (int)workpeopleReader["UsersId"])
+                        else if (workpeopleReader.Read() && user.Id == (int)workpeopleReader["User_Id"])
                         {
                             flag = true;
-                            WorkpeolesModels director = new WorkpeolesModels((int)workpeopleReader["Id"], (string)workpeopleReader["First_name"], (string)workpeopleReader["Last_name"], (string)workpeopleReader["Phone_number"], (string)workpeopleReader["Address"], (string)workpeopleReader["Password"], (string)workpeopleReader["Access_level"], (int)workpeopleReader["User_Id"]);
+                            WorkpeolesModels workpeople = new WorkpeolesModels((int)workpeopleReader["Id"], (string)workpeopleReader["First_name"], (string)workpeopleReader["Last_name"], (string)workpeopleReader["Phone_number"], (string)workpeopleReader["Address"], (string)workpeopleReader["Access_level"], (int)workpeopleReader["User_Id"]);
                             Form newform = new Pocetna();
                             newform.Show();
                         }
@@ -86,12 +84,12 @@ namespace KladionicaProjekat
                         Password.Text = "";
 
                     }
-                }
-                catch (Exception ex)
-                {
-                    flag = false;
-                    MessageBox.Show("Neočekivana greška:" + ex.Message);
-                }
+                } 
+                  catch (Exception ex)
+                  {
+                      flag = false;
+                      MessageBox.Show("Neočekivana greška:" + ex.Message);
+                  }
             }
         }
     }

@@ -33,9 +33,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.First_nameTextBox = new System.Windows.Forms.TextBox();
             this.Last_nameTextBox = new System.Windows.Forms.TextBox();
-            this.Date_of_birthTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
+            this.Date_of_birthTextBox = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // label1
@@ -80,13 +80,6 @@
             this.Last_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.Last_nameTextBox.TabIndex = 4;
             // 
-            // Date_of_birthTextBox
-            // 
-            this.Date_of_birthTextBox.Location = new System.Drawing.Point(153, 119);
-            this.Date_of_birthTextBox.Name = "Date_of_birthTextBox";
-            this.Date_of_birthTextBox.Size = new System.Drawing.Size(100, 20);
-            this.Date_of_birthTextBox.TabIndex = 5;
-            // 
             // SaveButton
             // 
             this.SaveButton.Location = new System.Drawing.Point(50, 216);
@@ -107,14 +100,22 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
+            // Date_of_birthTextBox
+            // 
+            this.Date_of_birthTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Date_of_birthTextBox.Location = new System.Drawing.Point(153, 119);
+            this.Date_of_birthTextBox.Name = "Date_of_birthTextBox";
+            this.Date_of_birthTextBox.Size = new System.Drawing.Size(184, 20);
+            this.Date_of_birthTextBox.TabIndex = 9;
+            // 
             // Player
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(374, 260);
+            this.Controls.Add(this.Date_of_birthTextBox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
-            this.Controls.Add(this.Date_of_birthTextBox);
             this.Controls.Add(this.Last_nameTextBox);
             this.Controls.Add(this.First_nameTextBox);
             this.Controls.Add(this.label3);
@@ -122,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Player";
             this.Text = "Player";
+            this.Load += new System.EventHandler(this.Player_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -134,8 +136,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox First_nameTextBox;
         private System.Windows.Forms.TextBox Last_nameTextBox;
-        private System.Windows.Forms.TextBox Date_of_birthTextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
+        private System.Windows.Forms.DateTimePicker Date_of_birthTextBox;
     }
 }

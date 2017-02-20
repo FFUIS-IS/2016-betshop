@@ -13,6 +13,13 @@ namespace KladionicaProjekat.Repository
 {
     class DoublesRepository
     {
+        public static string GetNameDoublesQuery()
+        {
+            string query;
+            query = @"SELECT Name FROM Doubles";
+            return query;
+        }
+
         public static bool AddDoubles(string Name, string Sports_Id)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
@@ -38,7 +45,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;

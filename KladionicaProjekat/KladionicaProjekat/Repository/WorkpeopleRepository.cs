@@ -15,18 +15,18 @@ namespace KladionicaProjekat.Repository
     class WorkpeopleRepository
     {
 
-        public static string GetNameQuery()
+        public static string GetFirst_nameWorkpeopleQuery()
         {
-            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+            
             string query;
             query = @"SELECT First_name FROM Workpeople";
             return query;
         }
 
-
-        public static string GetSurnameQuery()
+        
+        public static string GetLast_nameWorkpeopleQuery()
         {
-            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+            
             string query;
             query = @"SELECT Last_name FROM Workpeople";
             return query;
@@ -65,7 +65,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;
@@ -93,7 +93,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return result;

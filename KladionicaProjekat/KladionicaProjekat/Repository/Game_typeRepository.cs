@@ -13,6 +13,13 @@ namespace KladionicaProjekat.Repository
 {
     class Game_typeRepository
     {
+        public static string GetKind_of_gameQuery()
+        {
+            string query;
+            query = @"SELECT Kind_of_game FROM  Game_type";
+            return query;
+        }
+
         public static bool AddGame_type(string Kind_of_game)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
@@ -37,7 +44,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;

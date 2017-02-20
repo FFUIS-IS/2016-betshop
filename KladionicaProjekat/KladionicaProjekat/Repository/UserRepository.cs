@@ -22,7 +22,7 @@ namespace KladionicaProjekat.Repository
             try
             {
 
-                SqlCeCommand command = new SqlCeCommand(@"INSERT INTO User (UserName, Password) VALUES (@userName, @password)", Connection);
+                SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Users (UserName, Password) VALUES (@userName, @password)", Connection);
                 command.Parameters.AddWithValue("@userName", UserName);
                 command.Parameters.AddWithValue("@password", Password);
 
@@ -31,14 +31,14 @@ namespace KladionicaProjekat.Repository
                 if (result > 0)
                 {
                     command.Dispose();
-                    MessageBox.Show("Uneste tacne podatke za logovanje!");
+                    MessageBox.Show("Uspjesno ste dodali igraca!");
                 }
 
             }
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -53,7 +53,7 @@ namespace KladionicaProjekat.Repository
 
             try
             {
-                SqlCeCommand command = new SqlCeCommand(@"SELECT UserName FROM User  WHERE @usname = UserName", Connection);
+                SqlCeCommand command = new SqlCeCommand(@"SELECT UserName FROM Users  WHERE @usname = UserName", Connection);
                 command.Parameters.AddWithValue("@usname", UserName);
                 SqlCeDataReader reader = command.ExecuteReader();
 
@@ -68,7 +68,7 @@ namespace KladionicaProjekat.Repository
             catch (Exception ex)
             {
                 flag = false;
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;
@@ -84,7 +84,7 @@ namespace KladionicaProjekat.Repository
 
             try
             {
-                SqlCeCommand command = new SqlCeCommand(@"UPDATE User SET Password = @pass WHERE Id=@Logged_Id;", Connection);
+                SqlCeCommand command = new SqlCeCommand(@"UPDATE Users SET Password = @pass WHERE Id=@Logged_Id;", Connection);
                 command.Parameters.AddWithValue("@Logged_Id", id);
                 command.Parameters.AddWithValue("@pass", newPassword);
 
@@ -99,7 +99,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;
@@ -112,7 +112,7 @@ namespace KladionicaProjekat.Repository
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM User WHERE UserName = @name", Connection);
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Users WHERE UserName = @name", Connection);
             command.Parameters.AddWithValue("@name", name);
             SqlCeDataReader reader = command.ExecuteReader();
 

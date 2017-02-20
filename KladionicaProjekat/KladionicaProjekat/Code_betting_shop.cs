@@ -16,6 +16,7 @@ namespace KladionicaProjekat
         public Code_betting_shop()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -29,8 +30,6 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
 
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Code_betting_shop ([Name], [Address]) VALUES" + " ('" + NameTextBox.Text + "', '" + AddressTextBox.Text + "'); ", Connection);
-
             try
             {
 
@@ -38,13 +37,14 @@ namespace KladionicaProjekat
                 { MessageBox.Show("Unesite naziv grada!"); }
                 else if (AddressTextBox.Text == "")
                 { MessageBox.Show("Unesite adresu!"); }
-               
-
 
 
                 else
                 {
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Code_betting_shop (Name, Address) VALUES" + " ('" + NameTextBox.Text + "', '" + AddressTextBox.Text + "'); ", Connection);
+
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Unos je uspio!");
                     NameTextBox.Clear();
                     AddressTextBox.Clear();

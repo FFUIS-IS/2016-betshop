@@ -13,6 +13,14 @@ namespace KladionicaProjekat.Repository
 {
     class SportsRepository
     {
+        public static string GetDescription_sportsQuery()
+        {
+            
+            string query;
+            query = @"SELECT Description_sports FROM Sports ";
+            return query;
+        }
+
         public static bool AddSports(string Description_sports, string League_Id)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
@@ -38,7 +46,7 @@ namespace KladionicaProjekat.Repository
 
             catch (Exception ex)
             {
-                MessageBox.Show("Greska!!!");
+                MessageBox.Show(ex.Message);
             }
 
             return flag;

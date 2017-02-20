@@ -16,6 +16,7 @@ namespace KladionicaProjekat
         public Game_type()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -27,9 +28,6 @@ namespace KladionicaProjekat
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Game_type ([Kind_of_game]) VALUES" + " ('" + Kind_of_gameTextBox.Text + "'); ", Connection);
-
             try
             {
                 
@@ -39,7 +37,10 @@ namespace KladionicaProjekat
 
                 else
                 {
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Game_type (Kind_of_game) VALUES" + " ('" + Kind_of_gameTextBox.Text + "'); ", Connection);
+
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Unos je uspio!");
                     Kind_of_gameTextBox.Clear();
                     Kind_of_gameTextBox.Focus();

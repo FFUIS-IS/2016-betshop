@@ -17,6 +17,7 @@ namespace KladionicaProjekat
         public Pocetna()
         {
             InitializeComponent();
+            CenterToScreen();
         }
      
         private void Pocetna_Load(object sender, EventArgs e)
@@ -77,6 +78,19 @@ namespace KladionicaProjekat
         {
             Ticket Tickets = new Ticket();
             Tickets.ShowDialog();
+        }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            Form newform = new LoginForm();
+            this.Hide();
+            newform.Show();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin Admins = new Admin();
+            Admins.ShowDialog();
         }
     }
 }

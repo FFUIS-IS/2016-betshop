@@ -20,7 +20,7 @@ namespace KladionicaProjekat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForma());
+            Application.Run(new Sports());
         }
 
        /* static void Main(string[] args)

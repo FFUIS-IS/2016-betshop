@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using ElectronicSchoolDiary;
+using KladionicaProjekat.Repository;
 
 namespace KladionicaProjekat
 {
@@ -18,6 +20,7 @@ namespace KladionicaProjekat
         public Sports()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
 
@@ -32,23 +35,23 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
 
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports ([Description_sports], [League_Id]) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + League_IdTextBox.Text + "'); ", Connection);
-
             try
             {
 
                 if (Description_sportsTextBox.Text == "")
                 { MessageBox.Show("Unesite opis sporta!"); }
-                else if (League_IdTextBox.Text == "")
-                { MessageBox.Show("Unesite ligu!"); }
+                else if (LeagueComboBox.Text == "")
+                { MessageBox.Show("Izaberite vrstu lige"); }
 
 
                 else
                 {
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports ([Description_sports], [League_Id]) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + LeagueComboBox.Text + "'); ", Connection);
+
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Unos je uspio!");
                     Description_sportsTextBox.Clear();
-                    League_IdTextBox.Clear();
                     Description_sportsTextBox.Focus();
 
                 }
@@ -65,6 +68,31 @@ namespace KladionicaProjekat
 
 
 
+        }
+
+        private void LeagueComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Sports_Load(object sender, EventArgs e)
+        {
+           
+            PopulateLeagueComboBox();
+            
+           
+        }
+        private void PopulateLeagueComboBox()
+        {
+            try
+            {
+                string Query = LeagueRepository.GetQuery();
+                Lists.FillDropDownList1(Query, "Type_leagues", LeagueComboBox);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
     }
 }

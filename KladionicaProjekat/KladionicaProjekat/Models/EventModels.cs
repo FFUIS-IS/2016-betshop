@@ -9,12 +9,12 @@ namespace KladionicaProjekat.Models
     class EventModels
     {
         public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public DateTime Time_of { get; set; }
+        public string Date { get; set; }
+        public string Time_of { get; set; }
         public int Doubles_Id { get; set; }
 
 
-        public EventModels(int id, DateTime date, DateTime time_of, int doubles_Id)
+        public EventModels(int id, string date, string time_of, int doubles_Id)
         {
             Id = id;
             Date = date;

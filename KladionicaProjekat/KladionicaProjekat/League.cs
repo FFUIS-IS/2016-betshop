@@ -16,6 +16,7 @@ namespace KladionicaProjekat
         public League()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -25,19 +26,21 @@ namespace KladionicaProjekat
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
-
-
-            SqlCeCommand command = new SqlCeCommand ("INSERT INTO League ([Type_leagues]) VALUES" + " ('" + Type_leaguesTextBox.Text + "'); ", Connection);
 
             try
             {
+
                 if (Type_leaguesTextBox.Text == "")
                 { MessageBox.Show("Unesite vrstu lige!"); }
 
                 else
                 {
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO League (Type_leagues) VALUES" + " ('" + Type_leaguesTextBox.Text + "'); ", Connection);
+
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Unos je uspio!");
                     Type_leaguesTextBox.Clear();
                     Type_leaguesTextBox.Focus();
