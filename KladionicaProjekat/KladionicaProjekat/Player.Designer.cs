@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Player));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,12 +37,14 @@
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.Date_of_birthTextBox = new System.Windows.Forms.DateTimePicker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 35);
+            this.label1.Location = new System.Drawing.Point(26, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 13);
             this.label1.TabIndex = 0;
@@ -51,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 76);
+            this.label2.Location = new System.Drawing.Point(26, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 1;
@@ -60,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 119);
+            this.label3.Location = new System.Drawing.Point(26, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 2;
@@ -68,21 +71,21 @@
             // 
             // First_nameTextBox
             // 
-            this.First_nameTextBox.Location = new System.Drawing.Point(153, 35);
+            this.First_nameTextBox.Location = new System.Drawing.Point(120, 19);
             this.First_nameTextBox.Name = "First_nameTextBox";
             this.First_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.First_nameTextBox.TabIndex = 3;
             // 
             // Last_nameTextBox
             // 
-            this.Last_nameTextBox.Location = new System.Drawing.Point(153, 76);
+            this.Last_nameTextBox.Location = new System.Drawing.Point(120, 60);
             this.Last_nameTextBox.Name = "Last_nameTextBox";
             this.Last_nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.Last_nameTextBox.TabIndex = 4;
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(50, 216);
+            this.SaveButton.Location = new System.Drawing.Point(29, 151);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(75, 23);
             this.SaveButton.TabIndex = 6;
@@ -92,7 +95,7 @@
             // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(217, 216);
+            this.CancelButton.Location = new System.Drawing.Point(145, 151);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
             this.CancelButton.TabIndex = 7;
@@ -103,16 +106,26 @@
             // Date_of_birthTextBox
             // 
             this.Date_of_birthTextBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Date_of_birthTextBox.Location = new System.Drawing.Point(153, 119);
+            this.Date_of_birthTextBox.Location = new System.Drawing.Point(120, 98);
             this.Date_of_birthTextBox.Name = "Date_of_birthTextBox";
-            this.Date_of_birthTextBox.Size = new System.Drawing.Size(184, 20);
+            this.Date_of_birthTextBox.Size = new System.Drawing.Size(100, 20);
             this.Date_of_birthTextBox.TabIndex = 9;
+            this.Date_of_birthTextBox.ValueChanged += new System.EventHandler(this.Date_of_birthTextBox_ValueChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(276, 183);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // Player
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(374, 260);
+            this.ClientSize = new System.Drawing.Size(273, 181);
             this.Controls.Add(this.Date_of_birthTextBox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
@@ -121,9 +134,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Player";
             this.Text = "Player";
             this.Load += new System.EventHandler(this.Player_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,5 +154,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.DateTimePicker Date_of_birthTextBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -64,7 +64,7 @@ namespace KladionicaProjekat
 
         private void eventToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Event events = new Event();
+            EventForma events = new EventForma();
             events.ShowDialog();
         }
 

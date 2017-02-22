@@ -80,5 +80,10 @@ namespace KladionicaProjekat
         {
             Date_of_birthTextBox.CustomFormat = "yyyy-MM-dd";
         }
+
+        private void Date_of_birthTextBox_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

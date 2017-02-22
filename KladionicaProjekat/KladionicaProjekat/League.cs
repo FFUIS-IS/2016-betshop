@@ -60,5 +60,10 @@ namespace KladionicaProjekat
 
             
         }
+
+        private void Type_leaguesTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

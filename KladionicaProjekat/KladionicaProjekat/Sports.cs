@@ -11,11 +11,11 @@ using System.Data.SqlServerCe;
 using ElectronicSchoolDiary;
 using KladionicaProjekat.Repository;
 
+
 namespace KladionicaProjekat
 {
     public partial class Sports : Form
     {
-
 
         public Sports()
         {
@@ -23,11 +23,14 @@ namespace KladionicaProjekat
             CenterToScreen();
         }
 
-
-
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -46,7 +49,7 @@ namespace KladionicaProjekat
 
                 else
                 {
-                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports ([Description_sports], [League_Id]) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + LeagueComboBox.Text + "'); ", Connection);
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports (Description_sports, League_Id) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + LeagueComboBox.Text + "'); ", Connection);
 
                     command.ExecuteNonQuery();
 
@@ -77,22 +80,38 @@ namespace KladionicaProjekat
 
         private void Sports_Load(object sender, EventArgs e)
         {
-           
             PopulateLeagueComboBox();
-            
-           
         }
+        
         private void PopulateLeagueComboBox()
         {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
             try
             {
-                string Query = LeagueRepository.GetQuery();
-                Lists.FillDropDownList1(Query, "Type_leagues", LeagueComboBox);
+                LeagueComboBox.Items.Clear();
+                SqlCeCommand cmd = Connection.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM League";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlCeDataAdapter da = new SqlCeDataAdapter(cmd);
+                da.Fill(dt);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    LeagueComboBox.Items.Add(dr["Type_leagues"].ToString());
+                }
+
+
+
+
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
         }
+
+        
     }
-}
+    }

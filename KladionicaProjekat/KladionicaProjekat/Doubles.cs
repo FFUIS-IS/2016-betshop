@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlServerCe;
+using ElectronicSchoolDiary;
+using KladionicaProjekat.Repository;
+
 
 namespace KladionicaProjekat
 {
@@ -16,6 +19,7 @@ namespace KladionicaProjekat
         public Doubles()
         {
             InitializeComponent();
+            CenterToScreen();
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
@@ -33,24 +37,24 @@ namespace KladionicaProjekat
 
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
 
-
-            SqlCeCommand command = new SqlCeCommand("INSERT INTO Doubles ([Name], [Sports_Id]) VALUES" + " ('" + NameTextBox.Text + "', '" + Sports_IdTextBox.Text + "'); ", Connection);
-
             try
             {
 
                 if (NameTextBox.Text == "")
                 { MessageBox.Show("Unesite ime para!"); }
-                else if (Sports_IdTextBox.Text == "")
-                { MessageBox.Show("Unesite ime sporta!"); }
+                else if (SportComboBox.Text == "")
+                { MessageBox.Show("Uzaberite vrstu sporta!"); }
+
 
 
                 else
                 {
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Doubles (Name, Sports_Id) VALUES" + " ('" + NameTextBox.Text + "', '" + SportComboBox.Text + "'); ", Connection);
+
                     command.ExecuteNonQuery();
+
                     MessageBox.Show("Unos je uspio!");
                     NameTextBox.Clear();
-                    Sports_IdTextBox.Clear();
                     NameTextBox.Focus();
 
 
@@ -65,6 +69,49 @@ namespace KladionicaProjekat
                 return;
 
             }
-        }            
+        }
+
+        private void Doubles_Load_1(object sender, EventArgs e)
+        {
+            PopulateSportsComboBox();
+        }
+
+        private void PopulateSportsComboBox()
+        {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+          
+            try
+            {
+                
+
+                SportComboBox.Items.Clear();
+                SqlCeCommand cmm = Connection.CreateCommand();
+                cmm.CommandType = CommandType.Text;
+                cmm.CommandText = "SELECT * FROM Sports";
+
+                cmm.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlCeDataAdapter da = new SqlCeDataAdapter(cmm);
+                da.Fill(dt);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    SportComboBox.Items.Add(dr["Description_sports"].ToString());
+                }
+
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+
+        }
+
+        private void SportComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace KladionicaProjekat.Repository
 {
     class EventRepository
     {
+        
 
         public static bool AddEvent(DateTime Date, DateTime Time_of, string Doubles_Id1)
         {
@@ -22,7 +23,8 @@ namespace KladionicaProjekat.Repository
             try
             {
 
-                SqlCeCommand command1 = new SqlCeCommand(@"INSERT INTO Event (Date, Time_of, Doubles_Id1) VALUES (@date, @time_of, @doubles_Id1)", Connection);
+                SqlCeCommand command1 = new SqlCeCommand(@"INSERT INTO Event (Date, Time_of, Doubles_Id1) 
+                VALUES (@date, @time_of, @doubles_Id1)", Connection);
                 command1.Parameters.AddWithValue("@date", Date);
                 command1.Parameters.AddWithValue("@time_of", Time_of);
                 command1.Parameters.AddWithValue("@doubles_Id1", Doubles_Id1);

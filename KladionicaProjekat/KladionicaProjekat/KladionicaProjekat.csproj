@@ -69,11 +69,11 @@
     <Compile Include="Doubles.Designer.cs">
       <DependentUpon>Doubles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Events.cs">
+    <Compile Include="EventForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Events.Designer.cs">
-      <DependentUpon>Events.cs</DependentUpon>
+    <Compile Include="EventForma.Designer.cs">
+      <DependentUpon>EventForma.cs</DependentUpon>
     </Compile>
     <Compile Include="Game_type.cs">
       <SubType>Form</SubType>
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="Doubles.resx">
       <DependentUpon>Doubles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Events.resx">
-      <DependentUpon>Events.cs</DependentUpon>
+    <EmbeddedResource Include="EventForma.resx">
+      <DependentUpon>EventForma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Game_type.resx">
       <DependentUpon>Game_type.cs</DependentUpon>
