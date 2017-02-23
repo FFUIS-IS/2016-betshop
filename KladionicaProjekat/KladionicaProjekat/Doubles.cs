@@ -49,7 +49,9 @@ namespace KladionicaProjekat
 
                 else
                 {
-                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Doubles (Name, Sports_Id) VALUES" + " ('" + NameTextBox.Text + "', '" + SportComboBox.Text + "'); ", Connection);
+                    int sportsId = SportsRepository.GetIdByName(SportComboBox.Text);
+
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Doubles (Name, Sports_Id) VALUES" + " ('" + NameTextBox.Text + "', '" + sportsId + "'); ", Connection);
 
                     command.ExecuteNonQuery();
 

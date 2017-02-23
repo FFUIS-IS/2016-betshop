@@ -49,7 +49,8 @@ namespace KladionicaProjekat
 
                 else
                 {
-                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports (Description_sports, League_Id) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + LeagueComboBox.Text + "'); ", Connection);
+                    int leagueId = LeagueRepository.GetIdByName(LeagueComboBox.Text);
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Sports (Description_sports, League_Id) VALUES" + " ('" + Description_sportsTextBox.Text + "', '" + leagueId + "'); ", Connection);
 
                     command.ExecuteNonQuery();
 

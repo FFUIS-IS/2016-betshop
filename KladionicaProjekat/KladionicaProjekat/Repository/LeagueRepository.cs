@@ -14,6 +14,21 @@ namespace KladionicaProjekat.Repository
 {
     class LeagueRepository
     {
+        public static int GetIdByName(string name)
+        {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM League WHERE Type_leagues = @name", Connection);
+            command.Parameters.AddWithValue("@name", name);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
         public static string GetQuery()
         {
             string query;
