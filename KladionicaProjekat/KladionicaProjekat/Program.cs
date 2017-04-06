@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web;
 using System.Net;
+using KladionicaProjekat.Forme;
+using KladionicaProjekat.VIEW;
 
 namespace KladionicaProjekat
 {
@@ -20,7 +22,7 @@ namespace KladionicaProjekat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EventForma());
+            Application.Run(new GameTypeForm());
         }
 
        /* static void Main(string[] args)

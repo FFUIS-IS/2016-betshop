@@ -49,42 +49,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs">
+    <Compile Include="Forme\Admin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin.Designer.cs">
+    <Compile Include="Forme\Admin.Designer.cs">
       <DependentUpon>Admin.cs</DependentUpon>
     </Compile>
     <Compile Include="CheckLogin.cs" />
-    <Compile Include="Code_betting_shop.cs">
+    <Compile Include="Forme\Code_betting_shop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Code_betting_shop.Designer.cs">
+    <Compile Include="Forme\Code_betting_shop.Designer.cs">
       <DependentUpon>Code_betting_shop.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBaseConnection.cs" />
-    <Compile Include="Doubles.cs">
+    <Compile Include="VIEW\AdminDeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doubles.Designer.cs">
+    <Compile Include="VIEW\AdminDeleteForm.Designer.cs">
+      <DependentUpon>AdminDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\CodeBettingShopDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\CodeBettingShopDeleteForm.Designer.cs">
+      <DependentUpon>CodeBettingShopDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\DoublesDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\DoublesDeleteForm.Designer.cs">
+      <DependentUpon>DoublesDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\EventDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\EventDeleteForm.Designer.cs">
+      <DependentUpon>EventDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\GameTypeDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\GameTypeDeleteForm.Designer.cs">
+      <DependentUpon>GameTypeDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\LeagueDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\LeagueDeleteForm.Designer.cs">
+      <DependentUpon>LeagueDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\PlayerDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\PlayerDeleteForm.Designer.cs">
+      <DependentUpon>PlayerDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\Doubles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\Doubles.Designer.cs">
       <DependentUpon>Doubles.cs</DependentUpon>
     </Compile>
-    <Compile Include="EventForma.cs">
+    <Compile Include="Forme\EventForma.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EventForma.Designer.cs">
+    <Compile Include="Forme\EventForma.Designer.cs">
       <DependentUpon>EventForma.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game_type.cs">
+    <Compile Include="Forme\Game_type.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Game_type.Designer.cs">
+    <Compile Include="Forme\Game_type.Designer.cs">
       <DependentUpon>Game_type.cs</DependentUpon>
     </Compile>
-    <Compile Include="League.cs">
+    <Compile Include="Forme\League.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="League.Designer.cs">
+    <Compile Include="Forme\League.Designer.cs">
       <DependentUpon>League.cs</DependentUpon>
     </Compile>
     <Compile Include="Lists.cs" />
@@ -109,10 +151,10 @@
     <Compile Include="Models\TicketModels.cs" />
     <Compile Include="Models\UserModels.cs" />
     <Compile Include="Models\WorkpeolesModels.cs" />
-    <Compile Include="Player.cs">
+    <Compile Include="Forme\Player.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Player.Designer.cs">
+    <Compile Include="Forme\Player.Designer.cs">
       <DependentUpon>Player.cs</DependentUpon>
     </Compile>
     <Compile Include="Pocetna.cs">
@@ -138,46 +180,79 @@
     <Compile Include="Repository\TicketRepository.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\WorkpeopleRepository.cs" />
-    <Compile Include="Sports.cs">
+    <Compile Include="Forme\Sports.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sports.Designer.cs">
+    <Compile Include="Forme\Sports.Designer.cs">
       <DependentUpon>Sports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ticket.cs">
+    <Compile Include="Forme\Ticket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ticket.Designer.cs">
+    <Compile Include="Forme\Ticket.Designer.cs">
       <DependentUpon>Ticket.cs</DependentUpon>
     </Compile>
-    <Compile Include="Workpeople.cs">
+    <Compile Include="Forme\Workpeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Workpeople.Designer.cs">
+    <Compile Include="Forme\Workpeople.Designer.cs">
       <DependentUpon>Workpeople.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Admin.resx">
+    <Compile Include="VIEW\SportsDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\SportsDeleteForm.Designer.cs">
+      <DependentUpon>SportsDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VIEW\WorkpeopleDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VIEW\WorkpeopleDeleteForm.Designer.cs">
+      <DependentUpon>WorkpeopleDeleteForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forme\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Code_betting_shop.resx">
+    <EmbeddedResource Include="Forme\Code_betting_shop.resx">
       <DependentUpon>Code_betting_shop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doubles.resx">
+    <EmbeddedResource Include="VIEW\AdminDeleteForm.resx">
+      <DependentUpon>AdminDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\CodeBettingShopDeleteForm.resx">
+      <DependentUpon>CodeBettingShopDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\DoublesDeleteForm.resx">
+      <DependentUpon>DoublesDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\EventDeleteForm.resx">
+      <DependentUpon>EventDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\GameTypeDeleteForm.resx">
+      <DependentUpon>GameTypeDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\LeagueDeleteForm.resx">
+      <DependentUpon>LeagueDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\PlayerDeleteForm.resx">
+      <DependentUpon>PlayerDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\Doubles.resx">
       <DependentUpon>Doubles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EventForma.resx">
+    <EmbeddedResource Include="Forme\EventForma.resx">
       <DependentUpon>EventForma.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Game_type.resx">
+    <EmbeddedResource Include="Forme\Game_type.resx">
       <DependentUpon>Game_type.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="League.resx">
+    <EmbeddedResource Include="Forme\League.resx">
       <DependentUpon>League.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Player.resx">
+    <EmbeddedResource Include="Forme\Player.resx">
       <DependentUpon>Player.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pocetna.resx">
@@ -192,14 +267,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Sports.resx">
+    <EmbeddedResource Include="Forme\Sports.resx">
       <DependentUpon>Sports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ticket.resx">
+    <EmbeddedResource Include="Forme\Ticket.resx">
       <DependentUpon>Ticket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Workpeople.resx">
+    <EmbeddedResource Include="Forme\Workpeople.resx">
       <DependentUpon>Workpeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\SportsDeleteForm.resx">
+      <DependentUpon>SportsDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEW\WorkpeopleDeleteForm.resx">
+      <DependentUpon>WorkpeopleDeleteForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
