@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ticket));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,37 +40,17 @@
             this.SystemTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.Date_of_paymentDateTime = new System.Windows.Forms.DateTimePicker();
-            this.Time_paymentDateTime = new System.Windows.Forms.DateTimePicker();
-            this.Player_IdTextBox = new System.Windows.Forms.ComboBox();
-            this.Workpeople_IdTextBox = new System.Windows.Forms.ComboBox();
-            this.Code_betting_shop_IdTextBox = new System.Windows.Forms.ComboBox();
+            this.PlayerIDTextBox = new System.Windows.Forms.ComboBox();
+            this.WorkpeopleIDTextBox = new System.Windows.Forms.ComboBox();
+            this.CodeBettingShopIDTextBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Datum uplate:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Vrijeme uplate:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 123);
+            this.label3.Location = new System.Drawing.Point(33, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 13);
             this.label3.TabIndex = 2;
@@ -81,7 +59,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(33, 165);
+            this.label4.Location = new System.Drawing.Point(33, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 13);
             this.label4.TabIndex = 3;
@@ -125,7 +103,7 @@
             // 
             // Ticket_control_numberTextBox
             // 
-            this.Ticket_control_numberTextBox.Location = new System.Drawing.Point(162, 165);
+            this.Ticket_control_numberTextBox.Location = new System.Drawing.Point(148, 85);
             this.Ticket_control_numberTextBox.Name = "Ticket_control_numberTextBox";
             this.Ticket_control_numberTextBox.Size = new System.Drawing.Size(100, 20);
             this.Ticket_control_numberTextBox.TabIndex = 11;
@@ -164,49 +142,33 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
-            // Date_of_paymentDateTime
+            // PlayerIDTextBox
             // 
-            this.Date_of_paymentDateTime.Location = new System.Drawing.Point(162, 41);
-            this.Date_of_paymentDateTime.Name = "Date_of_paymentDateTime";
-            this.Date_of_paymentDateTime.Size = new System.Drawing.Size(150, 20);
-            this.Date_of_paymentDateTime.TabIndex = 18;
-            this.Date_of_paymentDateTime.Value = new System.DateTime(2017, 2, 22, 16, 6, 3, 0);
-            this.Date_of_paymentDateTime.ValueChanged += new System.EventHandler(this.Date_of_paymentDateTime_ValueChanged);
+            this.PlayerIDTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PlayerIDTextBox.FormattingEnabled = true;
+            this.PlayerIDTextBox.Location = new System.Drawing.Point(438, 80);
+            this.PlayerIDTextBox.Name = "PlayerIDTextBox";
+            this.PlayerIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.PlayerIDTextBox.TabIndex = 20;
             // 
-            // Time_paymentDateTime
+            // WorkpeopleIDTextBox
             // 
-            this.Time_paymentDateTime.Location = new System.Drawing.Point(162, 80);
-            this.Time_paymentDateTime.Name = "Time_paymentDateTime";
-            this.Time_paymentDateTime.Size = new System.Drawing.Size(150, 20);
-            this.Time_paymentDateTime.TabIndex = 19;
+            this.WorkpeopleIDTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.WorkpeopleIDTextBox.FormattingEnabled = true;
+            this.WorkpeopleIDTextBox.Location = new System.Drawing.Point(438, 123);
+            this.WorkpeopleIDTextBox.Name = "WorkpeopleIDTextBox";
+            this.WorkpeopleIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.WorkpeopleIDTextBox.TabIndex = 21;
             // 
-            // Player_IdTextBox
+            // CodeBettingShopIDTextBox
             // 
-            this.Player_IdTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Player_IdTextBox.FormattingEnabled = true;
-            this.Player_IdTextBox.Location = new System.Drawing.Point(438, 80);
-            this.Player_IdTextBox.Name = "Player_IdTextBox";
-            this.Player_IdTextBox.Size = new System.Drawing.Size(121, 21);
-            this.Player_IdTextBox.TabIndex = 20;
-            // 
-            // Workpeople_IdTextBox
-            // 
-            this.Workpeople_IdTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Workpeople_IdTextBox.FormattingEnabled = true;
-            this.Workpeople_IdTextBox.Location = new System.Drawing.Point(438, 123);
-            this.Workpeople_IdTextBox.Name = "Workpeople_IdTextBox";
-            this.Workpeople_IdTextBox.Size = new System.Drawing.Size(121, 21);
-            this.Workpeople_IdTextBox.TabIndex = 21;
-            // 
-            // Code_betting_shop_IdTextBox
-            // 
-            this.Code_betting_shop_IdTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Code_betting_shop_IdTextBox.FormattingEnabled = true;
-            this.Code_betting_shop_IdTextBox.Location = new System.Drawing.Point(162, 123);
-            this.Code_betting_shop_IdTextBox.Name = "Code_betting_shop_IdTextBox";
-            this.Code_betting_shop_IdTextBox.Size = new System.Drawing.Size(121, 21);
-            this.Code_betting_shop_IdTextBox.TabIndex = 22;
-            this.Code_betting_shop_IdTextBox.SelectedIndexChanged += new System.EventHandler(this.Code_betting_shop_IdTextBox_SelectedIndexChanged);
+            this.CodeBettingShopIDTextBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CodeBettingShopIDTextBox.FormattingEnabled = true;
+            this.CodeBettingShopIDTextBox.Location = new System.Drawing.Point(148, 45);
+            this.CodeBettingShopIDTextBox.Name = "CodeBettingShopIDTextBox";
+            this.CodeBettingShopIDTextBox.Size = new System.Drawing.Size(121, 21);
+            this.CodeBettingShopIDTextBox.TabIndex = 22;
+            this.CodeBettingShopIDTextBox.SelectedIndexChanged += new System.EventHandler(this.Code_betting_shop_IdTextBox_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -223,11 +185,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 291);
-            this.Controls.Add(this.Code_betting_shop_IdTextBox);
-            this.Controls.Add(this.Workpeople_IdTextBox);
-            this.Controls.Add(this.Player_IdTextBox);
-            this.Controls.Add(this.Time_paymentDateTime);
-            this.Controls.Add(this.Date_of_paymentDateTime);
+            this.Controls.Add(this.CodeBettingShopIDTextBox);
+            this.Controls.Add(this.WorkpeopleIDTextBox);
+            this.Controls.Add(this.PlayerIDTextBox);
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.SystemTextBox);
@@ -239,8 +199,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Ticket";
             this.Text = "Ticket";
@@ -252,9 +210,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -266,11 +221,9 @@
         private System.Windows.Forms.TextBox SystemTextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button CancelButton;
-        private System.Windows.Forms.DateTimePicker Date_of_paymentDateTime;
-        private System.Windows.Forms.DateTimePicker Time_paymentDateTime;
-        private System.Windows.Forms.ComboBox Player_IdTextBox;
-        private System.Windows.Forms.ComboBox Workpeople_IdTextBox;
-        private System.Windows.Forms.ComboBox Code_betting_shop_IdTextBox;
+        private System.Windows.Forms.ComboBox PlayerIDTextBox;
+        private System.Windows.Forms.ComboBox WorkpeopleIDTextBox;
+        private System.Windows.Forms.ComboBox CodeBettingShopIDTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

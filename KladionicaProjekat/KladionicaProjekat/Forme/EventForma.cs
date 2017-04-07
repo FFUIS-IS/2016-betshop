@@ -41,19 +41,16 @@ namespace KladionicaProjekat
 
             try
             {
-
-                if (DateTextBox.Text == "")
-                { MessageBox.Show("Unesite datum!"); }
-                else if (Time_ofTextBox.Text == "")
-                { MessageBox.Show("Unesite vrijeme!"); }
-                else if (Doubles_Id1BomboBox.Text == "")
+             if (DoublesIDComboBox.Text == "")
                 { MessageBox.Show("Unesite porove!"); }
-
 
 
                 else
                 {
-                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Event (Date, Time, Doubles_Id1) VALUES" + " ('" + DateTextBox.Value.Date.ToString("yyyy-MM-dd") + "', '" + Time_ofTextBox.Text + "', '" + Doubles_Id1BomboBox.Text + "'); ", Connection);
+
+                    int DoublesId = DoublesRepository.GetIdByName(DoublesIDComboBox.Text);
+
+                    SqlCeCommand command = new SqlCeCommand("INSERT INTO Event (Date, Time, Doubles_Id1) VALUES" + " ('" + DateTime.Now.Date.ToString("yyyy-MM-dd") + "', '" + DateTime.Now.TimeOfDay + "', '" + DoublesId + "'); ", Connection);
 
                     command.ExecuteNonQuery();
                     MessageBox.Show("Unos je uspio!");
@@ -81,7 +78,7 @@ namespace KladionicaProjekat
             try
             {
 
-                Doubles_Id1BomboBox.Items.Clear();
+                DoublesIDComboBox.Items.Clear();
                 SqlCeCommand cmm = Connection.CreateCommand();
                 cmm.CommandType = CommandType.Text;
                 cmm.CommandText = "SELECT * FROM Doubles";
@@ -93,7 +90,7 @@ namespace KladionicaProjekat
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Doubles_Id1BomboBox.Items.Add(dr["Name"].ToString());
+                    DoublesIDComboBox.Items.Add(dr["Name"].ToString());
                 }
 
 
@@ -109,11 +106,15 @@ namespace KladionicaProjekat
 
         private void EventForma_Load(object sender, EventArgs e)
         {
-            DateTextBox.CustomFormat = "yyyy-MM-dd";
-            /*Time_ofDateTimePicker2.CustomFormat = "hh:mm:ss";*/
             PopulateDoublesComboBox();
         }
 
+       
+
+        private void Doubles_Id1BomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
         private void Time_ofDateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
@@ -121,13 +122,6 @@ namespace KladionicaProjekat
         private void DateDateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void buttonVIEW_Click(object sender, EventArgs e)
-        {
-            Form deleteform = new EventDeleteForm();
-            deleteform.Show();
-            this.Hide();
         }
     }
 }

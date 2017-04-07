@@ -20,6 +20,22 @@ namespace KladionicaProjekat.Repository
             return query;
         }
 
+        public static int GetIdByName(string name)
+        {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Doubles WHERE Name = @name", Connection);
+            command.Parameters.AddWithValue("@name", name);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
+
         public static bool AddDoubles(string Name, string Sports_Id)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;

@@ -81,12 +81,6 @@
     <Compile Include="VIEW\DoublesDeleteForm.Designer.cs">
       <DependentUpon>DoublesDeleteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEW\EventDeleteForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEW\EventDeleteForm.Designer.cs">
-      <DependentUpon>EventDeleteForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="VIEW\GameTypeDeleteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,9 +218,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\DoublesDeleteForm.resx">
       <DependentUpon>DoublesDeleteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEW\EventDeleteForm.resx">
-      <DependentUpon>EventDeleteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEW\GameTypeDeleteForm.resx">
       <DependentUpon>GameTypeDeleteForm.cs</DependentUpon>

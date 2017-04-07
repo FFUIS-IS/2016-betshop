@@ -37,19 +37,16 @@ namespace KladionicaProjekat
             try
             {
 
-                if (Date_of_paymentDateTime.Text == "")
-                { MessageBox.Show("Unesite datum!"); }
-                else if (Time_paymentDateTime.Text == "")
-                { MessageBox.Show("Unesite vrijeme!"); }
-                else if (Ticket_control_numberTextBox.Text == "")
+                
+                if (Ticket_control_numberTextBox.Text == "")
                 { MessageBox.Show("Unesite kontrolni broj tiketa!"); }
                 else if (Payment_amountTextBox.Text == "")
                 { MessageBox.Show("Unesite iznos uplate!"); }
-                else if (Player_IdTextBox.Text == "")
+                else if (PlayerIDTextBox.Text == "")
                 { MessageBox.Show("Unesite sifru igraca!"); }
-                else if (Workpeople_IdTextBox.Text == "")
+                else if (WorkpeopleIDTextBox.Text == "")
                 { MessageBox.Show("Unesite ime zaposlenog!"); }
-                else if (Code_betting_shop_IdTextBox.Text == "")
+                else if (CodeBettingShopIDTextBox.Text == "")
                 { MessageBox.Show("Unesite sifru uplatnog mjesta!"); }
                 else if (SystemTextBox.Text == "")
                 { MessageBox.Show("Unesite da ili ne!"); }
@@ -61,15 +58,21 @@ namespace KladionicaProjekat
                 {
                     /*SqlCeCommand command = new SqlCeCommand("INSERT INTO Ticket (Date_of_payment, Time_payment, Ticket_control_number, Payment_amount, Player_Id, System, Workpeople_Id, Code_betting_shop_Id) VALUES" + " ('" + Date_of_paymentDateTime.Value.Date.ToString("yyyy-MM-dd") + "', '" + Time_paymentDateTicke.Value.TimeOfDay.ToString("hh:mm:ss") + "','" + Ticket_control_numberTextBox.Text + "', '" + Payment_amountTextBox.Text + "', '" + Player_IdTextBox.Text + "', '" + SystemTextBox.Text + "', '" + Workpeople_IdTextBox.Text + "', '" + Code_betting_shop_IdTextBox.Text + "'); ", Connection);*/
 
+
+                    int CodeBettingShopID = Code_betting_shopRepository.GetIdByName(CodeBettingShopIDTextBox.Text);
+                    int PlayerID = PlayerRepository.GetIdByName(PlayerIDTextBox.Text);
+                    int WorkpeopleID = WorkpeopleRepository.GetIdByName(WorkpeopleIDTextBox.Text);
+
+
                     SqlCeCommand command = new SqlCeCommand(@"INSERT INTO Ticket (Date_of_payment, Time_payment, Ticket_control_number, Payment_amount, Player_Id, Workpeople_Id, Code_betting_shop_Id, System)
                     VALUES (@date_of_payment, @time_payment, @ticket_control_number, @payment_amount, @player_Id, @workpeople_Id, @code_betting_shop_Id, @system)", Connection);
-                    command.Parameters.AddWithValue("@date_of_pyament", Date_of_paymentDateTime.Value.Date.ToString("yyyy-MM-dd"));
-                    command.Parameters.AddWithValue("@time_payment", Time_paymentDateTime);
+                    command.Parameters.AddWithValue("@date_of_pyament", DateTime.Now.Date.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@time_payment", DateTime.Now.TimeOfDay);
                     command.Parameters.AddWithValue("@ticket_control_number", Ticket_control_numberTextBox);
                     command.Parameters.AddWithValue("@payment_amount", Payment_amountTextBox);
-                    command.Parameters.AddWithValue("@player_id", Player_IdTextBox);
-                    command.Parameters.AddWithValue("@workpeople_Id", Workpeople_IdTextBox);
-                    command.Parameters.AddWithValue("@code_betting_shop_Id", Code_betting_shop_IdTextBox);
+                    command.Parameters.AddWithValue("@player_id", PlayerID);
+                    command.Parameters.AddWithValue("@workpeople_Id", WorkpeopleID);
+                    command.Parameters.AddWithValue("@code_betting_shop_Id", CodeBettingShopID);
                     command.Parameters.AddWithValue("@system", SystemTextBox);
 
 
@@ -103,7 +106,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
             try
             {
-                Player_IdTextBox.Items.Clear();
+                PlayerIDTextBox.Items.Clear();
                 SqlCeCommand cmd = Connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "SELECT * FROM Player";
@@ -114,7 +117,7 @@ namespace KladionicaProjekat
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Player_IdTextBox.Items.Add(dr["First_name"].ToString());
+                    PlayerIDTextBox.Items.Add(dr["First_name"].ToString());
                 }
 
 
@@ -131,7 +134,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
             try
             {
-                Workpeople_IdTextBox.Items.Clear();
+                WorkpeopleIDTextBox.Items.Clear();
                 SqlCeCommand cmd = Connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "SELECT * FROM Workpeople";
@@ -142,7 +145,7 @@ namespace KladionicaProjekat
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Workpeople_IdTextBox.Items.Add(dr["First_name"].ToString());
+                    WorkpeopleIDTextBox.Items.Add(dr["First_name"].ToString());
                 }
 
 
@@ -159,7 +162,7 @@ namespace KladionicaProjekat
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
             try
             {
-                Code_betting_shop_IdTextBox.Items.Clear();
+                CodeBettingShopIDTextBox.Items.Clear();
                 SqlCeCommand cmd = Connection.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "SELECT * FROM Code_betting_shop";
@@ -170,7 +173,7 @@ namespace KladionicaProjekat
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    Code_betting_shop_IdTextBox.Items.Add(dr["Name"].ToString());
+                    CodeBettingShopIDTextBox.Items.Add(dr["Name"].ToString());
                 }
 
 
@@ -184,8 +187,7 @@ namespace KladionicaProjekat
         }
         private void Ticket_Load(object sender, EventArgs e)
         {
-            Date_of_paymentDateTime.CustomFormat = ("yyyy-MM-dd");
-            Time_paymentDateTime.CustomFormat = ("hh:mm:ss");
+           
             PopulatePlayerComboBox();
             PopulateWorkpeopleComboBox();
             PopulateCode_betting_shopComboBox();

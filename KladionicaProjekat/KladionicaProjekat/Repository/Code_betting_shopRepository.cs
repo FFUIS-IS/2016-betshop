@@ -27,6 +27,22 @@ namespace KladionicaProjekat.Repository
             return query;
         }
 
+        public static int GetIdByName(string address)
+        {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Code_betting_shop WHERE Address = @address", Connection);
+            command.Parameters.AddWithValue(" @address", address);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
+
         public static bool AddCode_betting_shop(string Name, string Address)
         {
             SqlCeConnection Connection = DataBaseConnection.Instance.Connection;

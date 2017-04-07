@@ -32,6 +32,21 @@ namespace KladionicaProjekat.Repository
             return query;
         }
 
+        public static int GetIdByName(string First_Name)
+        {
+            SqlCeConnection Connection = DataBaseConnection.Instance.Connection;
+
+            SqlCeCommand command = new SqlCeCommand(@"SELECT Id FROM Workpeople WHERE First_Name = @firstName", Connection);
+            command.Parameters.AddWithValue(" @firstName", First_Name);
+            SqlCeDataReader reader = command.ExecuteReader();
+
+            reader.Read();
+
+            int result = (int)reader["Id"];
+            reader.Close();
+
+            return result;
+        }
 
         public static bool AddWorkpeole(string WorkpeoleFirst_name, string WorkpeoleLast_name, string Phone_number, string Address, string Access_level, string WorkpeopleUserName, string Password)
         {

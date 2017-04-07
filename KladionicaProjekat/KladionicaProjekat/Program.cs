@@ -22,7 +22,7 @@ namespace KladionicaProjekat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GameTypeForm());
+            Application.Run(new Ticket());
         }
 
        /* static void Main(string[] args)
